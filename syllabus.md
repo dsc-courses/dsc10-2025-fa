@@ -137,13 +137,14 @@ Your primary motivation when interacting with course staff should be
 
 ## 🚦 Getting Started
 
-Make sure to complete all the items listed here by **Thursday, April 3rd at 11:59PM**. If you join the course late, these items are due at 11:59PM the day after you join the class.
+Make sure to complete the four items listed below by **Saturday, September 27th at 11:59PM**. If you join the course late, these items are due at 11:59PM the day after you join the class.
 
-1. Join [Campuswire](https://campuswire.com/p/GAF8EAD2C) (join code: 7390).
-2. Check if you can access [Gradescope](https://www.gradescope.com/courses/1009023). If not, send a private message to the instructional staff on Campuswire with your name, PID, and email address, then we can add you so you can submit assignments.
-3. Read the syllabus and course website and complete the [Syllabus Check](https://docs.google.com/forms/d/e/1FAIpQLSdD_grvG_yDseqoS9PepgbLw6gWZAvOpS4cEgJDJSZFsf2UvQ/viewform?usp=sharing).
-4. Fill out the [Welcome Survey](https://forms.gle/wg33U8aUmChAKfpa6).
-5. Take the [Pretest](https://practice.dsc10.com/pretest/) and submit your written solutions to [Gradescope](https://www.gradescope.com/courses/1009023).
+1. Join [Campuswire](https://campuswire.com/c/GF283E889) (join code: 8258).
+2. Check if you can access [Gradescope](https://www.gradescope.com/courses/1141203). If not, send a private message to the instructional staff on Campuswire with your name, PID, and email address, then we can add you so you can submit assignments.
+3. Read the syllabus and course website and complete the [Syllabus Check](https://forms.gle/A2Q3Qrg72QQpRveP8).
+4. Fill out the [Welcome Survey](https://docs.google.com/forms/d/e/1FAIpQLSfLvqLbgbPuOj6bb40k0e8JRs0epBA-BMA8I0HasTMjiz8elQ/viewform?usp=dialog).
+
+After that, start working on the [Pretest](https://practice.dsc10.com/pretest/). You will need to submit your written solutions to [Gradescope](https://www.gradescope.com/courses/1009023) alongside your first assignment, Lab 0.
 
 
 
@@ -151,17 +152,17 @@ Make sure to complete all the items listed here by **Thursday, April 3rd at 11:5
 
 First and foremost, you will need access to a computer (or tablet with a
 keyboard) and a stable internet connection to participate in this course. UCSD
-has a [Laptop Lending Program](https://basicneeds.ucsd.edu/forms/library-laptop-lending-program/index.html) which may be helpful, but you should also contact
+has a [Laptop Lending Program](https://basicneeds.ucsd.edu/financial-security/laptop-lending-program.html) which may be helpful, but you should also contact
 us if you have any concerns about access to technology. Most students bring a computer to lecture, and a computer or tablet will be necessary for discussion sections.
 All course content will be linked from this website, but there are a few
 additional platforms that you'll need to access:
 
 - **Campuswire:** We'll be using Campuswire as our course message and
   discussion board. More details are in the [Communication](#-communication)
-  section below. If you didn't already get an invitation, [join here](https://campuswire.com/p/GAF8EAD2C) (join code: 7390).
+  section below. If you didn't already get an invitation, [join here](https://campuswire.com/c/GF283E889) (join code: 8258).
 
 - **Gradescope:** You'll submit all assignments and exams to
-  [Gradescope](https://www.gradescope.com/courses/1009023). This is where all of
+  [Gradescope](https://www.gradescope.com/courses/1141203). This is where all of
   your grades will live as well. You will be automatically added to Gradescope about 24 hours after enrolling in the course. If you need to submit assignments before then, please send a private message to the instructional staff on Campuswire with your name, PID, and email address.
 
 - **DataHub:** Assignments in this course will involve programming in Python.
@@ -173,29 +174,33 @@ Make sure you can access all three sites. It's a good idea to bookmark
 them, too (though they're all linked at the top of this website).
 
 {: .warning }
-**We will not be using Canvas this quarter. You won't see this course on your Canvas at all, so don't be alarmed. In addition, please do not contact the staff through Canvas – we won't be able to read it!**
+**We will not be using Canvas this quarter. Please do not contact the staff through Canvas – we won't be able to read it!**
 
 ### Syllabus Check
 
-To demonstrate that you have read and understood the policies on the syllabus and course website, you'll be asked to complete a [Syllabus Check](https://docs.google.com/forms/d/e/1FAIpQLSdD_grvG_yDseqoS9PepgbLw6gWZAvOpS4cEgJDJSZFsf2UvQ/viewform?usp=sharing), which is a short quiz about the information contained on the syllabus and course website. You will earn participation credit by completing the Syllabus Check before the deadline with a score of **80% or higher**. You can only take the quiz once, so make sure to read the course website carefully before beginning.
+To demonstrate that you have read and understood the policies on the syllabus and course website, you'll be asked to complete a [Syllabus Check](https://forms.gle/A2Q3Qrg72QQpRveP8), which is a short quiz about the information contained on the syllabus and course website. 
+
+You must complete the Syllabus Check before the deadline with a score of **80% or higher to earn credit**. You can only take this quiz once, so make sure to read the course website thoroughly before beginning.
 
 If you have questions about any course-related policies in the future, always refer to the syllabus and course website first!
 
 ### Welcome Survey
 
-Please fill out this short [Welcome Survey](https://forms.gle/wg33U8aUmChAKfpa6) at the start of the quarter. This is required of all students.
+Please fill out this short [Welcome Survey](https://docs.google.com/forms/d/e/1FAIpQLSfLvqLbgbPuOj6bb40k0e8JRs0epBA-BMA8I0HasTMjiz8elQ/viewform?usp=dialog) at the start of the quarter. This is required of all students.
 
 ### Pretest
 
 DSC 10’s only prerequisite is high school algebra. In order to gauge your preparedness for the type of math you’ll see in this class, you should work through the practice problems on this [Pretest](https://practice.dsc10.com/pretest/). This Pretest will help you identify any gaps in your background knowledge and it will teach you some useful test-taking skills. 
 
-The Pretest will be graded based on honest effort, not on the correctness of your responses. You will earn participation credit for completing the Pretest to the best of your ability. We'll release solutions to the Pretest after the due date, and you are highly encouraged to check how you did and learn from it.
+The Pretest will be graded based on honest effort, not on the correctness of your responses. The pretest will be graded alongside the first assignment, Lab 0, and you will earn credit towards your Lab 0 score by working through the problems on the pretest and submitting your written work. 
+
+We'll release solutions to the Pretest after the due date, and you are highly encouraged to check how you did and learn from it.
 
 ---
 
 ## 💬 Communication
 
-This quarter, we’ll be using [Campuswire](https://campuswire.com/p/GAF8EAD2C) (join code: 7390) as our course message board.
+This quarter, we’ll be using [Campuswire](https://campuswire.com/p/GF283E889) (join code: 8258) as our course message board.
 
 If you have a question about anything to do with the course — if you’re stuck
 on a problem, want clarification on the logistics, or just have a general
@@ -210,7 +215,7 @@ strengthen your understanding of the material.
 
 {: .note }
 Please use Campuswire **instead of email**, as this helps us keep all course-related
-communication in one place. In particular, don't send course staff questions about course content over email/social media – Campuswire is the place for that.
+communication in one place. In particular, don't send course staff questions about course content over email or social media – Campuswire is the place for that.
 
 ---
 
@@ -399,8 +404,8 @@ Exams and quizzes are designed to test your understanding of course material, th
 ### Exams
 
 This class has one Midterm Exam and one Final Exam:
-- Midterm Exam: Friday, May 2nd, **during your enrolled lecture slot**.
-- Final Exam: Saturday, June 7th from 11:30AM to 2:30PM, location TBD.
+- Midterm Exam: Wednesday, October 29th, **during your enrolled lecture slot**.
+- Final Exam: Saturday, December 6th from 3 to 6PM, location TBD.
 
 Exams are cumulative, though the Final Exam will emphasize material after the Midterm Exam. Both exams will be held **in-person and on-paper**. 
 
