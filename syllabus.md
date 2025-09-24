@@ -87,7 +87,7 @@ Subsequent discussion sections will be focused on quiz and exam preparation. Stu
 <!-- {: .warning }
 **In the Schedule of Classes, this course is listed as having both a discussion section (DI) and a lab section (LA), but we will only have one weekly meeting outside of lecture, which we’ll refer to as a discussion section, scheduled at the time listed above. You should ignore what you see as DI or LA on WebReg and just use the schedule above instead.** -->
 
-### Quizzes and pod meetings
+### Quizzes and Pod Meetings
 
 On five Wednesdays throughout the quarter, we will have short 20-minute quizzes. On four other Wednesdays throughout the quarter, you will meet with your pod and mentor. Pod meetings will be purely social and are designed to help you make connections with classmates and your mentor, not to work on any specific course-related material. 
 
