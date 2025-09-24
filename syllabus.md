@@ -192,7 +192,7 @@ Please fill out this short [Welcome Survey](https://docs.google.com/forms/d/e/1F
 
 DSC 10’s only prerequisite is high school algebra. In order to gauge your preparedness for the type of math you’ll see in this class, you should work through the practice problems on this [Pretest](https://practice.dsc10.com/pretest/). This Pretest will help you identify any gaps in your background knowledge and it will teach you some useful test-taking skills. 
 
-The Pretest will be graded based on honest effort, not on the correctness of your responses. The pretest will be graded alongside the first assignment, Lab 0, and you will earn credit towards your Lab 0 score by working through the problems on the pretest and submitting your written work. 
+The Pretest will be graded based on honest effort, not on the correctness of your responses. The Pretest will be graded alongside the first assignment, Lab 0, and you will earn credit towards your Lab 0 score by working through the problems on the Pretest and submitting your written work. 
 
 We'll release solutions to the Pretest after the due date, and you are highly encouraged to check how you did and learn from it.
 
