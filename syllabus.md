@@ -46,46 +46,58 @@ The contents of this course come from UC Berkeley's Data 8 course, created by An
 
 ### Lecture
 
-There are two lecture sections:
-- Section A: MWF 9-9:50AM in [Solis 104](https://map.concept3d.com/?id=1005#!m/237105).
-- Section B: MWF 11-11:50AM in [Solis 104](https://map.concept3d.com/?id=1005#!m/237105).
+There are four lecture sections:
+- Section A: MWF 9-9:50AM in [PCYNH 106](https://map.concept3d.com/?id=1005#!m/246320).
+- Section B: MWF 10-10:50AM in [PCYNH 106](https://map.concept3d.com/?id=1005#!m/246320).
+- Section C: MWF 11-11:50AM in [PCYNH 106](https://map.concept3d.com/?id=1005#!m/246320).
+- Section D: MWF 9-9:50AM in [PODEM 1A19](https://map.concept3d.com/?id=1005#!m/761769).
 
 Lecture is meant to introduce you to the main concepts of the course. In-person attendance is never required, but is strongly encouraged when possible, as you’ll get the opportunity to ask questions, answer ungraded concept-check polls, and participate in discussion. 
 
 You can attend any lecture section, but if space fills up, priority will be given to students officially enrolled in that section. For the Midterm Exam, you must attend the lecture section in which you are officially enrolled.
 
-**Lectures will be podcasted** (UCSD's term for "recorded"). Podcast recordings will be available online at [podcast.ucsd.edu](https://podcast.ucsd.edu) within a few hours.
+**Lectures will be podcasted** (UCSD's term for "recorded"). Podcast recordings will be available online at [podcast.ucsd.edu](https://podcast.ucsd.edu) within a few hours. 
 
-<!-- We will also link recordings directly on the course homepage; you can access these by clicking the 🎥 emoji. -->
+
+### Pods
+
+Outside of lecture, this class has two additional hours designated for this class in the schedule of classes. One of these hours, on Monday afternoon, appears as DI in the schedule of classes, and will be used for discussion sections. The other hour, on Wednesday afternoon, appears as LA in the schedule of classes, and will be used for both quizzes and small group (pod) meetings. 
+
+Pods will be groups of 20 to 30 students, mentored by a couse tutor. Pods will consist of students who will all attend the same lecture, discussion, quiz times, and pod meetings. Pods are meant to give you the experience of being in a "microclass" within a much larger course. 
+
+To help us assign you to a pod that works for your schedule, please let us know your availability and preferences on the [Welcome Survey](https://docs.google.com/forms/d/e/1FAIpQLSfLvqLbgbPuOj6bb40k0e8JRs0epBA-BMA8I0HasTMjiz8elQ/viewform?usp=dialog). You will be assigned to a pod based on your preferences and the availability of seats.  We will confirm your assigned pod and meeting times by email before Monday of Week 1.
+
 
 ### Discussion 
 
-There are two discussion sections:
-- Section A: Monday or Wednesday 3-3:50PM in [Center 214](https://map.concept3d.com/?id=1005#!m/163044).
-- Section B: Monday or Wednesday 4-4:50PM in [Center 214](https://map.concept3d.com/?id=1005#!m/163044).
+There are four discussion sections:
+- Mondays 1-1:50PM in [FAH 1450](https://map.concept3d.com/?id=1005#!m/610083).
+- Mondays 3-3:50PM in [PCYNH 106](https://map.concept3d.com/?id=1005#!m/246320).
+- Mondays 4-4:50PM in [PCYNH 106](https://map.concept3d.com/?id=1005#!m/246320).
+- Mondays 5-5:50PM in [PCYNH 106](https://map.concept3d.com/?id=1005#!m/246320).
 
-Discussion sections are sometimes held on Monday, and sometimes on Wednesday; the [homepage of this website](..) has the exact schedule.
+You will be assigned to a specific discussion section based on your availability and preferences as indicated on the [Welcome Survey](https://docs.google.com/forms/d/e/1FAIpQLSfLvqLbgbPuOj6bb40k0e8JRs0epBA-BMA8I0HasTMjiz8elQ/viewform?usp=dialog). You must attend your assigned discussion section to get credit for attendance.
 
-
-The first discussion is on **Wednesday of Week 1**. This discussion includes some useful instruction and tips for using Jupyter notebooks and Datahub, the programming tools we'll be using in this course. It should be helpful to get you set up and comfortable with the technology you'll be using all quarter.
+The first discussion is on **Wednesday of Week 1**. This discussion includes some useful instruction and tips for using Jupyter notebooks and Datahub, the programming tools we'll be using in this course. It should be helpful to get you set up and comfortable with the technology you'll be using all quarter. 
 
 Subsequent discussion sections will be focused on quiz and exam preparation. Students will work through problems from past DSC 10 quizzes and exams and be able to get help from course staff. Attending discussion and working through practice problems gives you direct experience with the types of questions you will see on quizzes and exams, which are typically the hardest parts of the course.
-
-You can attend any discussion session, but if space fills up, priority will be given to students officially enrolled in that section.
 
 **Discussion sections will not be podcasted.** The purpose of discussion is to give you hands-on problem-solving experience, so you really need to attend and participate to reap the benefits. 
 
 <!-- {: .warning }
 **In the Schedule of Classes, this course is listed as having both a discussion section (DI) and a lab section (LA), but we will only have one weekly meeting outside of lecture, which we’ll refer to as a discussion section, scheduled at the time listed above. You should ignore what you see as DI or LA on WebReg and just use the schedule above instead.** -->
 
-### Quiz Sessions
+### Quizzes and pod meetings
 
-On five days throughout the quarter (four Wednesdays and one Monday), we will have short 20-minute quizzes. On the [Welcome Survey](https://forms.gle/wg33U8aUmChAKfpa6), we will ask you for your quiz time preferences among the following options, and you will be assigned a regular quiz time based on your preferences and availability of seats. We will confirm your assigned quiz time by email before Monday of Week 2.
+On five Wednesdays throughout the quarter, we will have short 20-minute quizzes. On four other Wednesdays throughout the quarter, you will meet with your pod and mentor. Pod meetings will be purely social and are designed to help you make connections with classmates and your mentor, not to work on any specific course-related material. 
 
-- Quiz Session 1: Monday and Wednesday 3-3:20PM in [Center 214](https://map.concept3d.com/?id=1005#!m/163044).
-- Quiz Session 2: Monday and Wednesday 3:30-3:50PM in [Center 214](https://map.concept3d.com/?id=1005#!m/163044).
-- Quiz Session 3: Monday and Wednesday 4-4:20PM in [Center 214](https://map.concept3d.com/?id=1005#!m/163044).
-- Quiz Session 4: Monday and Wednesday 4:30-4:50PM in [Center 214](https://map.concept3d.com/?id=1005#!m/163044).
+Quizzes and pod meetings will be held on Wednesday afternoons at one of the following times.
+- Wednesdays 2-2:50PM in [FAH 1101](https://map.concept3d.com/?id=1005#!m/610083).
+- Wednesdays 3-3:50PM in [PCYNH 106](https://map.concept3d.com/?id=1005#!m/246320).
+- Wednesdays 4-4:50PM in [PCYNH 106](https://map.concept3d.com/?id=1005#!m/246320).
+- Wednesdays 5-5:50PM in [PCYNH 106](https://map.concept3d.com/?id=1005#!m/246320).
+
+You will be assigned to a specific time for quizzes and pod meetings based on your availability and preferences as indicated on the [Welcome Survey](https://docs.google.com/forms/d/e/1FAIpQLSfLvqLbgbPuOj6bb40k0e8JRs0epBA-BMA8I0HasTMjiz8elQ/viewform?usp=dialog). You must attend at your assigned time to get credit for attendance.
 
 
 ### Office Hours
