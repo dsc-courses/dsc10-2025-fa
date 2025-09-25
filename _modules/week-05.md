@@ -6,7 +6,7 @@ days:
     events:
       - name: REV
         type: lecture
-        title: <b>Midterm Review</b>
+        title: Midterm Review
       - name: DISC 5
         type: disc
         title: Probability and Simulation
