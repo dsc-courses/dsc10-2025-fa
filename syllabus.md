@@ -250,8 +250,7 @@ release lab assignments roughly a week before they're due. **Your lowest lab sco
 is dropped from your grade calculation at the end of the quarter.**
 
 Labs must be completed and submitted individually, but we encourage you to
-discuss high-level approaches with others. See the [Collaboration Policy and
-Academic Integrity](#-collaboration-policy-and-academic-integrity) section
+discuss high-level approaches with others. See the [Academic Integrity Policies](#-academic-integrity-policies) section
 for more details.
 
 ### Homework Assignments
@@ -287,8 +286,7 @@ is dropped from your grade calculation at the end of the quarter.**
 
 Like labs, homeworks must be completed and submitted individually, but we
 encourage you to discuss high-level approaches with others. See the
-[Collaboration Policy and Academic
-Integrity](#-collaboration-policy-and-academic-integrity) section for more
+[Academic Integrity Policies](#-academic-integrity-policies) section for more
 details.
 
 ### Projects
