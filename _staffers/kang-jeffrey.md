@@ -3,7 +3,7 @@ name: Jeffrey Kang
 role: Tutor
 pronouns: he/him
 email: 
-photo: assets/staff-images/sp24/kang-jeffrey.jpg
+photo: assets/staff-images/fa24/kang-jeffrey.jpg
 description: 2nd year, Data Science, Warren
 hometown: Palo Alto, CA
 askabout: Writing, bouldering, card games

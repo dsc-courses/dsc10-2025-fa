@@ -1,9 +1,9 @@
 ---
 name: Ashley Ho
-role: TA
+role: Tutor
 pronouns: she/her
 email: 
-photo: assets/staff-images/sp24/ho-ashley.jpg
+photo: assets/staff-images/fa24/ho-ashley.jpg
 description: 2nd year, M.S. in Data Science
 hometown: Irvine, CA
 askabout: Cooking, movies/TV shows, corgis
