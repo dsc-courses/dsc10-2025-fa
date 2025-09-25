@@ -438,7 +438,7 @@ To summarize all of the events and deadlines, refer to this general weekly
 schedule. Please refer to the [homepage of this website](..) for the most up-to-date schedule of deadlines.
 
 | | **Monday** | **Tuesday** | **Wednesday** | **Thursday** | **Friday** | **Saturday** |
-| **morning** | Lecture| | Lecture | | Lecture | | |
+| **morning** | Lecture| | Lecture | | Lecture | |
 | **afternoon** | Discussion| | Quiz or Pod Meeting | | | |
 | **evening** | | | | <b style="color:red">Lab due</b> | | <b style="color:red">Homework due</b> |
 
@@ -456,7 +456,7 @@ There will be 15 participation points available:
 - 1 point for attending each discussion section (9 points total).
 - 1 point for attending each pod meeting (4 points total).
 
-Your participation grade will be the number of points earned out of 4.
+**Score 12 points or higher for full participation credit.** If you earn fewer than 12 points, your participation grade will be the number of points earned out of 12. There is no extra credit for earning more than 12 points.
 
 ---
 
@@ -466,10 +466,10 @@ The table below shows how your mastery of class material will be assessed and
 how grades will be computed:
 
 | **Component** | **Weight** | **Notes** |
-| Participation | 3% | |
+| Participation | 10% | |
 | Lab Assignments | 10% | drop lowest score |
-| Homework Assignments | 25% | drop lowest score |
-| Quizzes | 12% | drop two lowest scores |
+| Homework Assignments | 20% | drop lowest score |
+| Quizzes | 10% | drop two lowest scores |
 | Midterm Project | 10% | |
 | Midterm Exam | 10% | |
 | Final Project | 10% | |
@@ -482,7 +482,7 @@ regardless of the number of points they are graded out of.
 
 If you'd like to request a regrade on any assignment, you must do so within one
 week of the assignment being graded. If you think there is a problem with the
-autograder,  please fill out the [Autograder Regrade Request Form](https://docs.google.com/forms/d/e/1FAIpQLSfe9Q1hFfaBZG_mlWPBUzzq2m9Azdk8ACnSOxbs4B0LhY-M9g/viewform?usp=sharing). 
+autograder,  please fill out the [Autograder Regrade Request Form](https://forms.gle/qTKubrnLCjBHSfzU6). 
 If you think there is a problem with how a manually-graded question was graded, submit a regrade request through Gradescope.
 
 ### Letter Grades and Incompletes
@@ -665,6 +665,8 @@ respected and feels comfortable.
 ### Satisfactory Academic Progress for Financial Aid
 
 Satisfactory Academic Progress (SAP) refers to the academic standards students must maintain to remain eligible for federal, state, and institutional financial aid. If you are receiving financial aid, please ensure you review the [SAP requirements and the appeals process](https://fas.ucsd.edu/forms-and-resources/sap/index.html).
+
+We will not use a #FinAid survey, but we will certify academic activity for any student who submits any assignment, including the [Welcome Survey](https://docs.google.com/forms/d/e/1FAIpQLSfLvqLbgbPuOj6bb40k0e8JRs0epBA-BMA8I0HasTMjiz8elQ/viewform?usp=dialog). 
 
 ---
 
