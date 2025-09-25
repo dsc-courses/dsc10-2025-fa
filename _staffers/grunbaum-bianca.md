@@ -3,7 +3,7 @@ name: Bianca Grunbaum
 role: Tutor
 pronouns: she/her
 email: 
-photo: assets/staff-images/fa24/grunbaum-bianca.jpg
+photo: assets/staff-images/fa25/grunbaum-bianca.jpg
 description: 2nd year, Data Science, Revelle
 hometown: Milwaukee, WI
 askabout: Any and all kinds of music (playing or listening), sitcoms, and new book recs!
