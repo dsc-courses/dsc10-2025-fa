@@ -78,7 +78,7 @@ There are four discussion sections:
 
 You will be assigned to a specific discussion section based on your availability and preferences as indicated on the [Welcome Survey](https://docs.google.com/forms/d/e/1FAIpQLSfLvqLbgbPuOj6bb40k0e8JRs0epBA-BMA8I0HasTMjiz8elQ/viewform?usp=dialog). You must attend your assigned discussion section to get credit for attendance.
 
-The first discussion is on **Wednesday of Week 1**. This discussion includes some useful instruction and tips for using Jupyter notebooks and Datahub, the programming tools we'll be using in this course. It should be helpful to get you set up and comfortable with the technology you'll be using all quarter. 
+The first discussion includes some useful instruction and tips for using Jupyter notebooks and Datahub, the programming tools we'll be using in this course. It should be helpful to get you set up and comfortable with the technology you'll be using all quarter. 
 
 Subsequent discussion sections will be focused on quiz and exam preparation. Students will work through problems from past DSC 10 quizzes and exams and be able to get help from course staff. Attending discussion and working through practice problems gives you direct experience with the types of questions you will see on quizzes and exams, which are typically the hardest parts of the course.
 
@@ -98,7 +98,6 @@ Quizzes and pod meetings will be held on Wednesday afternoons at one of the foll
 - Wednesdays 5-5:50PM in [PCYNH 106](https://map.concept3d.com/?id=1005#!m/246320).
 
 You will be assigned to a specific time for quizzes and pod meetings based on your availability and preferences as indicated on the [Welcome Survey](https://docs.google.com/forms/d/e/1FAIpQLSfLvqLbgbPuOj6bb40k0e8JRs0epBA-BMA8I0HasTMjiz8elQ/viewform?usp=dialog). You must attend at your assigned time to get credit for attendance.
-
 
 ### Office Hours
 
@@ -147,7 +146,6 @@ Make sure to complete the four items listed below by **Saturday, September 27th 
 After that, start working on the [Pretest](https://practice.dsc10.com/pretest/). You will need to submit your written solutions to [Gradescope](https://www.gradescope.com/courses/1009023) alongside your first assignment, Lab 0.
 
 
-
 ### Technology
 
 First and foremost, you will need access to a computer (or tablet with a
@@ -192,7 +190,7 @@ Please fill out this short [Welcome Survey](https://docs.google.com/forms/d/e/1F
 
 DSC 10’s only prerequisite is high school algebra. In order to gauge your preparedness for the type of math you’ll see in this class, you should work through the practice problems on this [Pretest](https://practice.dsc10.com/pretest/). This Pretest will help you identify any gaps in your background knowledge and it will teach you some useful test-taking skills. 
 
-The Pretest will be graded based on honest effort, not on the correctness of your responses. The Pretest will be graded alongside the first assignment, Lab 0, and you will earn credit towards your Lab 0 score by working through the problems on the Pretest and submitting your written work. 
+The Pretest will be graded based on honest effort, not on the correctness of your responses. You will earn some participation credit for working on the Pretest and submitting your written solutions to Gradescope by the deadline.
 
 We'll release solutions to the Pretest after the due date, and you are highly encouraged to check how you did and learn from it.
 
@@ -215,7 +213,7 @@ strengthen your understanding of the material.
 
 {: .note }
 Please use Campuswire **instead of email**, as this helps us keep all course-related
-communication in one place. In particular, don't send course staff questions about course content over email or social media – Campuswire is the place for that.
+communication in one place. In particular, don't send course staff questions about course content through email, Canvas, or social media – Campuswire is the place for that.
 
 ---
 
@@ -266,14 +264,14 @@ An important difference between labs and homeworks lies in the way autograder
 tests are run. Unlike the tests in the labs, the tests in the homework cannot
 be used to guarantee that you have the correct answers. The tests in the
 homework only check to make sure that your answer is appropriately formatted, not that it is
-correct. For example, if a homework question asks you to calculate a percent,
-the test in the homework might check that the answer you provide is a number
+correct. For example, if a homework question asks you to calculate a percentage,
+the test in the homework might only check that the answer you provide is a number
 between 0 and 100. **You should make sure that all the tests pass before
 submitting your homework, but this will not guarantee a perfect score.**
 
 After you submit your homework to Gradescope, and after the deadline for
 submissions has passed, a new set of hidden tests will be run to make sure that
-you have the correct answers. In the percent example above, the hidden test
+you have the correct answers. In the percentage example above, the hidden test
 might check that your answer equals 56, for example. Your score for the
 assignment will be based on the results of the hidden tests, which won't be
 available immediately after submission. So if you see a perfect score upon
@@ -281,7 +279,7 @@ submission, this only means that you've passed the formatting tests, not the
 hidden correctness tests that determine your score.
 
 To submit a homework, follow the instructions in the assignment to upload your
-notebook to Gradescope. Homeworks will usually be due on Mondays at
+notebook to Gradescope. Homeworks will usually be due on Saturdays at
 11:59PM, though you should refer to the [homepage of this website](..) for the most up-to-date schedule. 
 We will release homework assignments roughly a week before they're
 due. **Your lowest homework score
@@ -316,7 +314,7 @@ If working with a partner, only one of you should submit the assignment, and you
 Labs, homeworks, and projects must be submitted by 11:59PM on the due date to
 be considered on time. You may turn them in as many times as you like before
 the deadline, and only the most recent submission will be graded, so it's a
-good habit to submit early and often.
+good habit to **submit early and often**.
 
 {: .warning }
 When submitting any assignment to Gradescope, make sure to stick around until you 
@@ -409,19 +407,19 @@ This class has one Midterm Exam and one Final Exam:
 
 Exams are cumulative, though the Final Exam will emphasize material after the Midterm Exam. Both exams will be held **in-person and on-paper**. 
 
-If you have a conflict with either exam, you should let us know right away via the [Welcome Survey](https://forms.gle/wg33U8aUmChAKfpa6) to see if accomodations can be made. Without express permission otherwise, students are required to take both exams at the scheduled times.
+If you have a conflict with either exam, you should let us know right away via the [Welcome Survey](https://docs.google.com/forms/d/e/1FAIpQLSfLvqLbgbPuOj6bb40k0e8JRs0epBA-BMA8I0HasTMjiz8elQ/viewform?usp=dialog) to see if accomodations can be made. Without express permission otherwise, students are required to take both exams at the scheduled times.
 
 ### Quizzes
 
 Quizzes are designed to help you get more practice solving problems on-paper without a computer in front of you, as you'll need to do on exams. Quiz questions are meant to be more straightforward than exam questions, but they will help you build the skills you need to perform well on exams, as well as help you identify any areas you need more practice in before the exam. 
 
-There are five quizzes throughout the quarter, administered during your assigned quiz time:
+There are five quizzes throughout the quarter, administered during your assigned quiz time on the following dates:
 
-- Quiz 1: Wednesday, April 16
-- Quiz 2: Wednesday, April 23
-- Quiz 3: Wednesday, May 14
-- Quiz 4: Wednesday, May 21
-- Quiz 5: Monday, June 2
+- Quiz 1: Wednesday, October 15th
+- Quiz 2: Wednesday, October 22nd
+- Quiz 3: Wednesday, November 12th
+- Quiz 4: Wednesday, November 19th
+- Quiz 5: Wednesday, December 3rd
 
 We will count only your three highest quiz scores towards your grade. In other words, we will drop your two lowest quiz scores.
 
@@ -430,7 +428,7 @@ Quizzes are designed to give you low-stakes opportunities to practice solving pr
 {: .warning }
 We will not offer makeup quizzes. If you are sick, traveling, or otherwise need to miss a quiz, you have some flexibility because not all scores will be factored into your grade.
 
-You must attend **your assigned quiz session**; see the [Quiz Sessions](#quiz-sessions) section of the syllabus for details.
+You must attend quizzes at **your assigned time**; see the [Quizzes and Pod Meetings](#quizzes-and-pod-meetings) section of the syllabus for details.
 
 ---
 
@@ -439,22 +437,24 @@ You must attend **your assigned quiz session**; see the [Quiz Sessions](#quiz-se
 To summarize all of the events and deadlines, refer to this general weekly
 schedule. Please refer to the [homepage of this website](..) for the most up-to-date schedule of deadlines.
 
-| | **Monday** | **Tuesday** | **Wednesday** | **Thursday** | **Friday** |
-| **morning** | Lecture| | Lecture | | Lecture | |
-| **afternoon** | sometimes Discussion or Quiz| | sometimes Discussion or Quiz | | | 
-| **evening** | <b style="color:red">Homework due</b> | | | <b style="color:red">Lab due</b> | | 
+| | **Monday** | **Tuesday** | **Wednesday** | **Thursday** | **Friday** | **Saturday** |
+| **morning** | Lecture| | Lecture | | Lecture | | |
+| **afternoon** | Discussion| | Quiz or Pod Meeting | | | |
+| **evening** | | | | <b style="color:red">Lab due</b> | | <b style="color:red">Homework due</b> |
 
 ---
 
 ## 🙋 Participation
 
-Actively participating in the course is highly beneficial to your learning. Engaging with the course material, the course staff, and your peers will set you up for success in this course and in other data science courses you may take in the future. To encourage your active participation, a small part of your overall grade will be determined by participation points. 
+Actively participating in the course is highly beneficial to your learning. Engaging with the course material, the course staff, and your peers will set you up for success in this course and in other data science courses you may take in the future. A portion of your grade will be allocated towards participation.
 
-There will be 4 participation points available:
+There will be 15 participation points available:
 
-- 2 points for the Pretest, graded for honest effort.
+- 1 point for the Pretest, graded for honest effort.
 - 1 point for passing the Syllabus Check at 80% or higher.
 - 1 point for completing SETs (Student Evaluations of Teaching) and an internal End-Of-Quarter Survey. 
+- 1 point for attending each discussion section (9 points total).
+- 1 point for attending each pod meeting (4 points total).
 
 Your participation grade will be the number of points earned out of 4.
 
