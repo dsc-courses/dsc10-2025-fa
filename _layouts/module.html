@@ -15,119 +15,105 @@
       <p>
         <strong class="label label-{{ event.type }}"> {{ event.name }} </strong>
         {%- if event.type != "lecture" and event.url -%}
-            <a href="{{ event.url }}">{{ event.title }}</a>
-        {%- else -%}
-            {{ event.title }} 
-        {%- endif -%}
-        {%- if event.type == "lecture" or event.type ==
-        "review" -%} 
-          {%- if event.blank -%}
-            <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <small>
-              <a href="{{ event.blank }}">
-                <button type="button" class="btn btn-info">🌗 blank</button>
-              </a>
-            </small>
-          {%- endif -%} 
-          {%- if event.url-%}
-            <small>
-              <a href="{{ event.url }}">
-                <button type="button" class="btn btn-info">💻 code</button>
-              </a>
-            </small>
-          {%- endif -%}
-          {%- if event.filled -%}
-            <small
-              >&nbsp;&nbsp;<a href="{{ event.filled }}">
-                <button type="button" class="btn btn-info">📝 filled</button>
-              </a>
-            </small>
-          {%- endif -%}
-          {%- if event.code -%}
-            <small
-              >&nbsp;&nbsp;<a href="{{ event.code }}">
-                <button type="button" class="btn btn-info">💻 code</button>
-              </a>
-            </small>
-          {%- endif -%}
-          {%- if event.animations -%}
-            <small>
-              &nbsp;&nbsp;<a href="{{ event.animations }}">
-                <button type="button" class="btn btn-info">🧮 animations</button>
-              </a>
-            </small>
-          {%- endif -%}
-          {%- if event.html -%}
-            <small> &nbsp;&nbsp;
-              <a href="{{ event.html }}">
-                <button type="button" class="btn btn-info">✏️ write</button>
-              </a>
-            </small>
-          {%- endif -%}
-          {%- if event.9am -%}
-            <small> &nbsp;&nbsp;
-              <a href="{{ event.9am }}">
-                <button type="button" class="btn btn-info">🕘 9AM</button>
-              </a>
-            </small>
-          {%- endif -%}
-          {%- if event.10am -%}
-            <small> &nbsp;&nbsp;
-              <a href="{{ event.10am }}">
-                <button type="button" class="btn btn-info">🕙 10AM</button>
-              </a>
-            </small>
-          {%- endif -%}
-          {%- if event.11am -%}
-          <small> &nbsp;&nbsp;
-            <a href="{{ event.11am }}">
-              <button type="button" class="btn btn-info">🕚 11AM</button>
-            </a>
-          </small>
-          {%- endif -%}
-          {%- if event.1pm -%}
-            <small> &nbsp;&nbsp;
-              <a href="{{ event.1pm }}">
-                <button type="button" class="btn btn-info">🕐 1PM</button>
-              </a>
-            </small>
-          {%- endif -%}
-          {%- if event.podcast -%}
-          <small>
-            &nbsp;&nbsp;
-            <a href="{{ event.podcast }}">
-              <button type="button" class="btn btn-info">🎥 watch</button>
-              <!-- 🎥 -->
-            </a>
-          </small>
-          {%- endif -%} 
-          {%- if event.videos -%}
-          <small
-            >&nbsp;&nbsp;<a href="{{ event.videos }}"
-              ><button type="button" class="btn btn-info">
-                ⏯️ extra videos
-              </button></a
-            ></small
-          >
-          {%- endif -%} 
-          {%- if event.faqs -%}
-          <small
-            >&nbsp;&nbsp;<a href="{{ event.faqs }}"
-              ><button type="button" class="btn btn-info">🙋 FAQs</button></a
-            ></small
-          >
-          {%- endif -%} 
-        {%- endif -%} {%- if event.type == "hw" or event.type ==
-        "disc" -%} {%- if event.problems -%}
-        &nbsp;&nbsp;
+        <a href="{{ event.url }}">{{ event.title }}</a>
+        {%- else -%} {{ event.title }} {%- endif -%} {%- if event.type ==
+        "lecture" or event.type == "review" -%} {%- if event.blank -%}
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <small>
+          <a href="{{ event.blank }}">
+            <button type="button" class="btn btn-info">🌗 blank</button>
+          </a>
+        </small>
+        {%- endif -%} {%- if event.url-%}
+        <small>
+          <a href="{{ event.url }}">
+            <button type="button" class="btn btn-info">💻 code</button>
+          </a>
+        </small>
+        {%- endif -%} {%- if event.filled -%}
+        <small
+          >&nbsp;&nbsp;<a href="{{ event.filled }}">
+            <button type="button" class="btn btn-info">📝 filled</button>
+          </a>
+        </small>
+        {%- endif -%} {%- if event.code -%}
+        <small
+          >&nbsp;&nbsp;<a href="{{ event.code }}">
+            <button type="button" class="btn btn-info">💻 code</button>
+          </a>
+        </small>
+        {%- endif -%} {%- if event.animations -%}
+        <small>
+          &nbsp;&nbsp;<a href="{{ event.animations }}">
+            <button type="button" class="btn btn-info">🧮 animations</button>
+          </a>
+        </small>
+        {%- endif -%} {%- if event.html -%}
+        <small>
+          &nbsp;&nbsp;
+          <a href="{{ event.html }}">
+            <button type="button" class="btn btn-info">✏️ write</button>
+          </a>
+        </small>
+        {%- endif -%} {%- if event['9am'] -%}
+        <small>
+          &nbsp;&nbsp;
+          <a href="{{ event['9am'] }}">
+            <button type="button" class="btn btn-info">🕘 9AM</button>
+          </a>
+        </small>
+        {%- endif -%} {%- if event['10am'] -%}
+        <small>
+          &nbsp;&nbsp;
+          <a href="{{ event['10am'] }}">
+            <button type="button" class="btn btn-info">🕙 10AM</button>
+          </a>
+        </small>
+        {%- endif -%} {%- if event['11am'] -%}
+        <small>
+          &nbsp;&nbsp;
+          <a href="{{ event['11am'] }}">
+            <button type="button" class="btn btn-info">🕚 11AM</button>
+          </a>
+        </small>
+        {%- endif -%} {%- if event['1pm'] -%}
+        <small>
+          &nbsp;&nbsp;
+          <a href="{{ event['1pm'] }}">
+            <button type="button" class="btn btn-info">🕐 1PM</button>
+          </a>
+        </small>
+        {%- endif -%} {%- if event.podcast -%}
+        <small>
+          &nbsp;&nbsp;
+          <a href="{{ event.podcast }}">
+            <button type="button" class="btn btn-info">🎥 watch</button>
+            <!-- 🎥 -->
+          </a>
+        </small>
+        {%- endif -%} {%- if event.videos -%}
+        <small
+          >&nbsp;&nbsp;<a href="{{ event.videos }}"
+            ><button type="button" class="btn btn-info">
+              ⏯️ extra videos
+            </button></a
+          ></small
+        >
+        {%- endif -%} {%- if event.faqs -%}
+        <small
+          >&nbsp;&nbsp;<a href="{{ event.faqs }}"
+            ><button type="button" class="btn btn-info">🙋 FAQs</button></a
+          ></small
+        >
+        {%- endif -%} {%- endif -%} {%- if event.type == "hw" or event.type ==
+        "disc" -%} {%- if event.problems -%} &nbsp;&nbsp;
         <small>
           <a href="{{ event.problems }}">
             <button type="button" class="btn btn-info">📄 problems</button>
           </a>
         </small>
-        {%- endif -%} {%- if event.slides -%}
-        &nbsp;&nbsp;
+        {%- endif -%} {%- if event.slides -%} &nbsp;&nbsp;
         <small>
           <a href="{{ event.slides }}">
             <button type="button" class="btn btn-info">💻 slides</button>
