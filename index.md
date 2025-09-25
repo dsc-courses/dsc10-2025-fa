@@ -21,12 +21,12 @@ nav_order: 1
 >Quiz 5 is on **Monday**, June 2nd. -->
 
 
-<!--{: .success }
->Welcome to DSC 10! Make sure to read this website thoroughly and complete the items in the [Getting Started](https://dsc10.com/syllabus/#-getting-started) checklist. -->
+{: .success }
+>Welcome to DSC 10! Make sure to read this website thoroughly and complete the items in the [Getting Started](https://dsc10.com/syllabus/#-getting-started) checklist. These are due very soon, on **Saturday, September 27th at 11:59PM**.
 
 
-{: .warning }
-This site is **under construction**. Anything you read here is not finalized. This disclaimer will be removed when the site is ready for Fall 2025.
+<!--{: .warning }
+This site is **under construction**. Anything you read here is not finalized. This disclaimer will be removed when the site is ready for Fall 2025. -->
 
 
 <!--{: .success }
