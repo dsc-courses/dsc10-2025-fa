@@ -1,6 +1,6 @@
 ---
 name: Ashley Ho
-role: Tutor
+role: TA
 pronouns: she/her
 email: 
 photo: assets/staff-images/sp24/ho-ashley.jpg
