@@ -34,6 +34,10 @@ days:
           keywords: string methods, mean, median, lists, arrays, array arithmetic
     - date: 2025-10-2
       events:
+        - name: PRE
+          type: survey
+          title: Pretest
+          url: https://practice.dsc10.com/pretest/index.html
         - name: LAB 0
           type: lab
           title: Expressions and Data Types
