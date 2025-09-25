@@ -6,7 +6,7 @@ days:
     events:
       - name: REV
         type: lecture
-        title: <b>Review</b>
+        title: Review
       - name: DISC 9
         type: disc
         title: Regression
@@ -21,7 +21,7 @@ days:
     events:
       - name: REV
         type: lecture
-        title: <b>Review</b>
+        title: Review
       - name: QUIZ 5
         type: quiz
         title: Quiz 5 covers Lectures 19-22
@@ -35,7 +35,7 @@ days:
     events:
       - name: REV
         type: lecture
-        title: <b>Review, Conclusion</b>
+        title: Review, Conclusion
   - date: 2025-12-6
     events:
       - name: EXAM
