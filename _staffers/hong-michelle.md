@@ -4,9 +4,9 @@ role: Tutor
 pronouns: she/her
 email: 
 photo: assets/staff-images/fa25/hong-michelle.jpg
-description: 2nd year, Data Science, Seventh
+description: 3rd year, Data Science, Seventh
 hometown: Dublin, CA
-askabout: Bananagrams, thrifting, bass guitar
-foodemoji: 🐠 
-food: Hawaiian Fresh Seafood, Pelicana
+askabout: Thrifting, bass guitar, rock climbing
+foodemoji: 🐟
+food: Hawaiian Fresh Seafood, Pho Duyen Mai
 ---

@@ -4,9 +4,9 @@ role: Tutor
 pronouns: she/her
 email: 
 photo: assets/staff-images/fa25/feng-kate.jpg
-description: 2nd year, Data Science, Seventh
+description: 3rd year, Data Science, Seventh
 hometown: San Jose, CA
-askabout: Taekwondo, Studio Ghibli, Youtube
+askabout: Making Youtube videos, music industry, taekwondo club
 foodemoji: 🥐 
-food: La Clochette, Don Carlos Taco Shop
+food: Altered State, YinTang
 ---
