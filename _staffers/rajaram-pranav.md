@@ -4,7 +4,7 @@ role: Tutor
 pronouns: he/him
 email: 
 photo: assets/staff-images/fa25/rajaram-pranav.jpg
-description: 2nd year, Data Science, Marshall
+description: 3rd year, Data Science, Marshall
 hometown: Westford, MA
 askabout: Football, poker, Drake
 foodemoji: 🥪 
