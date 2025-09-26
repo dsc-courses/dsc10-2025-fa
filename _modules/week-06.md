@@ -30,6 +30,9 @@ days:
             - name: CIT 14.2-14.3
               url: https://inferentialthinking.com/chapters/14/2/Variability.html
           keywords: Chebyshev, standard units, normal distribution, CDF, inflection points
+        - name: POD
+          type: quiz
+          title: Pod Meeting
     - date: 2025-11-6
       events:
         - name: LAB 4

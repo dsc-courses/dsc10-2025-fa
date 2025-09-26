@@ -32,6 +32,9 @@ days:
             - name: CIT 14.1
               url: https://inferentialthinking.com/chapters/14/1/Properties_of_the_Mean.html
           keywords: string methods, mean, median, lists, arrays, array arithmetic
+        - name: POD
+          type: quiz
+          title: Pod Meeting
     - date: 2025-10-2
       events:
         - name: PRE

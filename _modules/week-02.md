@@ -30,6 +30,9 @@ days:
             - name: CIT 7.0-7.1
               url: https://inferentialthinking.com/chapters/07/Visualization.html
           keywords: .groupby, numerical vs. categorical, scatter plot, line plot, bar chart
+        - name: POD
+          type: quiz
+          title: Pod Meeting
     - date: 2025-10-9
       events:
         - name: LAB 1

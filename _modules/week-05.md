@@ -16,6 +16,9 @@ days:
       - name: EXAM
         type: exam
         title: <b>Midterm Exam covers Lectures 1-12</b>
+      - name: POD
+        type: quiz
+        title: Pod Meeting
   - date: 2025-10-31
     events:
       - name: LEC 14
