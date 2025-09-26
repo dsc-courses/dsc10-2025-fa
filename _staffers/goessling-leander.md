@@ -6,7 +6,7 @@ email:
 photo: assets/staff-images/fa25/goessling-leander.jpg
 description: 3rd year, Marshall, Probability and Statistics
 hometown: Brookline, MA
-askabout: Baseball, music, and cooking
+askabout: Baseball, music, cooking
 foodemoji: 🌯 
-food: allartas, Regents pizza
+food: Vallartas, Regents Pizza
 ---

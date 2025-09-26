@@ -6,7 +6,7 @@ email:
 photo: assets/staff-images/fa25/batubara-ryan.jpg
 description: 4th year, Data Science and Math-CS, Revelle
 hometown: Jakarta, Indonesia
-askabout: UCSD class enrollment, puzzles, and classical guitar.
+askabout: UCSD class enrollment, puzzles, classical guitar
 foodemoji: 🍨 
 food: An's Hatmakers, Koon Thai Kitchen, Phil's BBQ, Kinoyume Sushi
 ---

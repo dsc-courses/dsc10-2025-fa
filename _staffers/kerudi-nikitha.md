@@ -4,9 +4,9 @@ role: Tutor
 pronouns: she/her
 email: 
 photo: assets/staff-images/fa25/kerudi-nikitha.jpg
-description: 2nd year, Data Science, Marshall, Passionate about AI and Software Engineering 
+description: 2nd year, Data Science, Marshall 
 hometown: San Jose, CA
-askabout: My SWE internship for a private equity firm, Technology Consulting, Matcha and Dancing 
+askabout: My SWE internship for a private equity firm, technology consulting, matcha, dancing 
 foodemoji: 🐟 
-food: Its Raw Poke, Elvira (Authentic Italian), Blue Whale, The Bunny Cafe
+food: It's Raw Poke, Elvira, Blue Whale, The Bunny Cafe
 ---

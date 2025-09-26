@@ -8,5 +8,5 @@ description: 4rd year, Data Science and Computer Engineering, ERC
 hometown: Richmond, BC, Canada
 askabout: Cockatiels, Teamfight Tactics
 foodemoji: 🌮 
-food: Mcdonald's, Taco bell, Chipotle
+food: McDonald's, Taco Bell, Chipotle
 ---

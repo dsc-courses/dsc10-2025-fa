@@ -8,5 +8,5 @@ description: 3rd year, Data Science, Revelle
 hometown: Upland, CA
 askabout: Pickleball, Cage the Elephant, fantasy football
 foodemoji: 🍲 
-food: IET NOM, Mekong Lao & Thai, Hawaiian Fresh Seafood
+food: VIET NOM, Mekong Lao & Thai, Hawaiian Fresh Seafood
 ---

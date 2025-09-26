@@ -7,6 +7,6 @@ photo: assets/staff-images/fa25/li-ella.jpg
 description: 2nd year, Data Science, Warren
 hometown: Nanjing, China 
 askabout: Traveling, badminton, K-pop
-foodemoji: 🍽 
+foodemoji: 🐟
 food: Fish with You, The Fire Spot, An's Dry Cleaning
 ---

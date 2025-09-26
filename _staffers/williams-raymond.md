@@ -6,7 +6,7 @@ email:
 photo: assets/staff-images/fa25/williams-raymond.jpg
 description: 3rd year, Data Science, Revelle
 hometown: Clovis, CA
-askabout: Clothes, movies & TV shows, and dogs
+askabout: Clothes, movies, TV shows, dogs
 foodemoji: 🍲 
 food: Tasty Pot, Pho Cow Cali Express, Shabu-Works
 ---

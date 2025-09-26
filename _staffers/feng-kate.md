@@ -6,7 +6,7 @@ email:
 photo: assets/staff-images/fa25/feng-kate.jpg
 description: 3rd year, Data Science, Seventh
 hometown: San Jose, CA
-askabout: Making Youtube videos, music industry, taekwondo club
+askabout: Making YouTube videos, music industry, taekwondo club
 foodemoji: 🥐 
 food: Altered State, YinTang
 ---

@@ -8,5 +8,5 @@ description: 2nd year, Data Science, Sixth
 hometown: San Lorenzo, CA
 askabout: Traveling, cooking, music
 foodemoji: 🍦 
-food: omiSomi, Marugame
+food: SomiSomi, Marugame
 ---
