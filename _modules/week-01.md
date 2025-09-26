@@ -41,7 +41,7 @@ days:
         - name: LAB 0
           type: lab
           title: Expressions and Data Types
-          url:
+          url: http://datahub.ucsd.edu/user-redirect/git-sync?repo=https://github.com/dsc-courses/dsc10-2025-fa&subPath=labs/lab0/lab0.ipynb
     - date: 2025-10-3
       events: 
         - name: LEC 4
