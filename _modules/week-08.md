@@ -14,9 +14,9 @@ days:
             - name: CIT 12.0-12.1
               url: https://inferentialthinking.com/chapters/12/Comparing_Two_Samples.html
           keywords: confidence intervals for hypothesis testing, body temperature, smoking/babies
-        - name: DISC 7
+        - name: DISC 8
           type: disc
-          title: The Normal Distribution and the CLT
+          title: The CLT and Hypothesis Testing
           url:
     - date: 2025-11-19
       events: 

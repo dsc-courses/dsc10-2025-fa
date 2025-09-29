@@ -14,6 +14,10 @@ days:
           - name: CIT 15.2-15.4
             url: https://inferentialthinking.com/chapters/15/2/Regression_Line.html
         keywords: regression line in original units, outliers, errors, RMSE, best fit, least squares
+      - name: DISC 9
+        type: disc
+        title: Total Variation Distance and Permutation Testing
+        url:
   - date: 2025-11-25
     events:
       - name: HW 6
@@ -32,10 +36,6 @@ days:
           - name: CIT 15.5-16.3
             url: https://inferentialthinking.com/chapters/15/5/Visual_Diagnostics.html
         keywords: residuals, residual plots, patterns, datasaurus dozen, prediction intervals
-      - name: DISC 8
-        type: disc
-        title: Hypothesis Testing and Permutation Testing
-        url:
   - date: 2025-11-28
     events:
       - markdown_content: <b>No Lecture (Thanksgiving Break🦃)</b>

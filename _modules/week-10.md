@@ -7,7 +7,7 @@ days:
       - name: REV
         type: lecture
         title: Review
-      - name: DISC 9
+      - name: DISC 10
         type: disc
         title: Regression
         url:

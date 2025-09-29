@@ -16,6 +16,9 @@ days:
             - name: 11.1
               url: https://inferentialthinking.com/chapters/11/1/Assessing_a_Model.html
           keywords: standard deviation of 0s and 1s, np.random.multinomial, Robert Swain jury
+        - name: DISC 7
+          type: disc
+          title: Standardization and the Normal Distribution
     - date: 2025-11-12
       events: 
         - name: LEC 19
