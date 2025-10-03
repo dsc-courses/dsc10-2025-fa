@@ -385,7 +385,7 @@ When submitting your work, there are two common errors to watch out for:
 To prevent these issues, it is important that you let the autograder run on Gradescope until it shows you under “Public Tests” that all public test cases passed. Do not navigate away from Gradescope until you see this confirmation that your submission was able to be successfully graded!
 
 If you happen to make one of the above mistakes and you notice it yourself 
-within 48 hours of the deadline, please resubmit your assignment. If it is more than 48 hours since the deadline,
+within 48 hours of the deadline, please resubmit your assignment. Since we always grade your latest submission, a resubmission after the deadline will use up slip days. If it is more than 48 hours since the deadline,
 please reach out to a staff member and we may allow you to resubmit it late, at the cost of 2 slip days.
 It is your responsibility to ensure that all assignments are submitted correctly.
 
@@ -446,12 +446,12 @@ schedule. Please refer to the [homepage of this website](..) for the most up-to-
 
 Actively participating in the course is highly beneficial to your learning. Engaging with the course material, the course staff, and your peers will set you up for success in this course and in other data science courses you may take in the future. A portion of your grade will be allocated towards participation.
 
-There will be 15 participation points available:
+There will be 17 participation points available:
 
 - 1 point for the Pretest, graded for honest effort.
 - 1 point for passing the Syllabus Check at 80% or higher.
 - 1 point for completing SETs (Student Evaluations of Teaching) and an internal End-Of-Quarter Survey. 
-- 1 point for attending each discussion section (9 points total).
+- 1 point for attending each discussion section (10 points total).
 - 1 point for attending each pod meeting (4 points total).
 
 **Score 12 points or higher for full participation credit.** If you earn fewer than 12 points, your participation grade will be the number of points earned out of 12. There is no extra credit for earning more than 12 points.
