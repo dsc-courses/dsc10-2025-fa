@@ -36,6 +36,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .m { color: var(--jp-mirror-editor-number-color) } /* Literal.Number */
 .highlight .s { color: var(--jp-mirror-editor-string-color) } /* Literal.String */
 .highlight .ow { color: var(--jp-mirror-editor-operator-color); font-weight: bold } /* Operator.Word */
+.highlight .pm { color: var(--jp-mirror-editor-punctuation-color) } /* Punctuation.Marker */
 .highlight .w { color: var(--jp-mirror-editor-variable-color) } /* Text.Whitespace */
 .highlight .mb { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Bin */
 .highlight .mf { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Float */
@@ -14464,6 +14465,10 @@ a.anchor-link {
   display: none;
 }
 
+.highlight  {
+  margin: 0.4em;
+}
+
 /* Input area styling */
 .jp-InputArea {
   overflow: hidden;
@@ -14473,26 +14478,9 @@ a.anchor-link {
   overflow: hidden;
 }
 
-.CodeMirror.cm-s-jupyter .highlight pre {
-/* weird, but --jp-code-padding defined to be 5px but 4px horizontal padding is hardcoded for pre.CodeMirror-line */
-  padding: var(--jp-code-padding) 4px;
+.CodeMirror pre {
   margin: 0;
-
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  color: inherit;
-
-}
-
-.jp-OutputArea-output pre {
-  line-height: inherit;
-  font-family: inherit;
-}
-
-.jp-RenderedText pre {
-  color: var(--jp-content-font-color1);
-  font-size: var(--jp-code-font-size);
+  padding: 0;
 }
 
 /* Using table instead of flexbox so that we can use break-inside property */
@@ -14638,7 +14626,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h4 id="Don't-forget-about-these-resources!">Don't forget about these resources!<a class="anchor-link" href="#Don't-forget-about-these-resources!">&#182;</a></h4><ul>
-<li><a href="https://dsc-courses.github.io/bpd-reference/docs/documentation/intro/">DSC 10 reference sheet</a>.</li>
+<li><a href="https://dsc-courses.github.io/bpd-reference/docs/documentation/intro/">DSC 10 reference sheet</a>. </li>
 <li><a href="https://notes.dsc10.com"><code>babypandas</code> notes</a>.</li>
 <li><a href="https://dsc10.com/resources/">The Resources tab of the course website</a>.</li>
 </ul>
@@ -14686,9 +14674,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">states</span> <span class="o">=</span> <span class="n">bpd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/states.csv&#39;</span><span class="p">)</span>
-<span class="n">states</span> <span class="o">=</span> <span class="n">states</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">Density</span><span class="o">=</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Population&#39;</span><span class="p">)</span> <span class="o">/</span> <span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Land Area&#39;</span><span class="p">))</span>
-<span class="n">states</span> <span class="o">=</span> <span class="n">states</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;State&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">states</span> <span class="o">=</span> <span class="n">bpd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'data/states.csv'</span><span class="p">)</span>
+<span class="n">states</span> <span class="o">=</span> <span class="n">states</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">Density</span><span class="o">=</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'Population'</span><span class="p">)</span> <span class="o">/</span> <span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'Land Area'</span><span class="p">))</span>
+<span class="n">states</span> <span class="o">=</span> <span class="n">states</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'State'</span><span class="p">)</span>
 <span class="n">states</span>
 </pre></div>
 
@@ -14703,7 +14691,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
 
@@ -14864,8 +14854,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># This DataFrame only contains rows where the &#39;Region&#39; is &#39;West&#39;!</span>
-<span class="n">only_west</span> <span class="o">=</span> <span class="n">states</span><span class="p">[</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Region&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;West&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># This DataFrame only contains rows where the 'Region' is 'West'!</span>
+<span class="n">only_west</span> <span class="o">=</span> <span class="n">states</span><span class="p">[</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'Region'</span><span class="p">)</span> <span class="o">==</span> <span class="s1">'West'</span><span class="p">]</span>
 <span class="n">only_west</span>
 </pre></div>
 
@@ -14880,7 +14870,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
 
@@ -15022,8 +15014,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <li>Notice, these words are <strong>not</strong> in quotes.</li>
 </ul>
 </li>
-<li><code>bool</code> is a data type in Python, just like <code>int</code>, <code>float</code>, and <code>str</code>.<ul>
-<li>It stands for &quot;Boolean&quot;, named after George Boole, an early mathematician.</li>
+<li><code>bool</code> is a data type in Python, just like <code>int</code>, <code>float</code>, and <code>str</code>. <ul>
+<li>It stands for "Boolean", named after George Boole, an early mathematician.</li>
 </ul>
 </li>
 <li>There are only two possible Boolean values: <code>True</code> or <code>False</code>.<ul>
@@ -15059,7 +15051,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
 
@@ -15098,7 +15092,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
 
@@ -15137,7 +15133,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
 
@@ -15163,36 +15161,35 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Comparison-operators">Comparison operators<a class="anchor-link" href="#Comparison-operators">&#182;</a></h3><p>There are several types of comparisons we can make.</p>
 <table>
-<thead>
-<tr>
-  <th>symbol</th>
-  <th>meaning</th>
+<thead><tr>
+<th>symbol</th>
+<th>meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-  <td><code>==</code></td>
-  <td>equal to</td>
+<td><code>==</code></td>
+<td>equal to</td>
 </tr>
 <tr>
-  <td><code>!=</code></td>
-  <td>not equal to</td>
+<td><code>!=</code></td>
+<td>not equal to</td>
 </tr>
 <tr>
-  <td><code>&lt;</code></td>
-  <td>less than</td>
+<td><code>&lt;</code></td>
+<td>less than</td>
 </tr>
 <tr>
-  <td><code>&lt;=</code></td>
-  <td>less than or equal to</td>
+<td><code>&lt;=</code></td>
+<td>less than or equal to</td>
 </tr>
 <tr>
-  <td><code>&gt;</code></td>
-  <td>greater than</td>
+<td><code>&gt;</code></td>
+<td>greater than</td>
 </tr>
 <tr>
-  <td><code>&gt;=</code></td>
-  <td>greater than or equal to</td>
+<td><code>&gt;=</code></td>
+<td>greater than or equal to</td>
 </tr>
 </tbody>
 </table>
@@ -15223,7 +15220,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
 
@@ -15349,7 +15348,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Region&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;West&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'Region'</span><span class="p">)</span> <span class="o">==</span> <span class="s1">'West'</span>
 </pre></div>
 
      </div>
@@ -15363,7 +15362,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
 
@@ -15427,7 +15428,7 @@ Name: Region, Length: 50, dtype: bool</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">states</span><span class="p">[</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Region&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;West&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">states</span><span class="p">[</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'Region'</span><span class="p">)</span> <span class="o">==</span> <span class="s1">'West'</span><span class="p">]</span>
 </pre></div>
 
      </div>
@@ -15441,7 +15442,9 @@ Name: Region, Length: 50, dtype: bool</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
 
@@ -15578,7 +15581,7 @@ Name: Region, Length: 50, dtype: bool</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">states</span><span class="p">[</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Region&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;Pacific Northwest&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">states</span><span class="p">[</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'Region'</span><span class="p">)</span> <span class="o">==</span> <span class="s1">'Pacific Northwest'</span><span class="p">]</span>
 </pre></div>
 
      </div>
@@ -15592,7 +15595,9 @@ Name: Region, Length: 50, dtype: bool</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
 
@@ -15682,7 +15687,7 @@ Name: Region, Length: 50, dtype: bool</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">only_rep</span> <span class="o">=</span> <span class="n">states</span><span class="p">[</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Party&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;Republican&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">only_rep</span> <span class="o">=</span> <span class="n">states</span><span class="p">[</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'Party'</span><span class="p">)</span> <span class="o">==</span> <span class="s1">'Republican'</span><span class="p">]</span>
 <span class="n">only_rep</span>
 </pre></div>
 
@@ -15697,7 +15702,9 @@ Name: Region, Length: 50, dtype: bool</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
 
@@ -15828,7 +15835,7 @@ Name: Region, Length: 50, dtype: bool</pre>
 <li><code>.shape</code> is an <em>attribute</em>, as it describes the DataFrame.</li>
 </ul>
 </li>
-<li>Access each with <code>[]</code>:<ul>
+<li>Access each with <code>[]</code>: <ul>
 <li><code>.shape[0]</code> for rows.</li>
 <li><code>.shape[1]</code> for columns.</li>
 </ul>
@@ -15860,7 +15867,9 @@ Name: Region, Length: 50, dtype: bool</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
 
@@ -15900,7 +15909,9 @@ Name: Region, Length: 50, dtype: bool</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
 
@@ -15940,7 +15951,9 @@ Name: Region, Length: 50, dtype: bool</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
 
@@ -15980,7 +15993,9 @@ Name: Region, Length: 50, dtype: bool</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
 
@@ -16033,7 +16048,7 @@ Name: Region, Length: 50, dtype: bool</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">midwest</span> <span class="o">=</span> <span class="n">states</span><span class="p">[</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Region&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;Midwest&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">midwest</span> <span class="o">=</span> <span class="n">states</span><span class="p">[</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'Region'</span><span class="p">)</span> <span class="o">==</span> <span class="s1">'Midwest'</span><span class="p">]</span>
 <span class="n">midwest</span>
 </pre></div>
 
@@ -16048,7 +16063,9 @@ Name: Region, Length: 50, dtype: bool</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
 
@@ -16174,7 +16191,7 @@ Name: Region, Length: 50, dtype: bool</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">midwest_sorted</span> <span class="o">=</span> <span class="n">midwest</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Land Area&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">midwest_sorted</span> <span class="o">=</span> <span class="n">midwest</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">'Land Area'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">midwest_sorted</span>
 </pre></div>
 
@@ -16189,7 +16206,9 @@ Name: Region, Length: 50, dtype: bool</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[17]:</div>
 
@@ -16329,7 +16348,7 @@ Name: Region, Length: 50, dtype: bool</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">midwest_sorted</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;State&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">midwest_sorted</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'State'</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 
      </div>
@@ -16343,33 +16362,33 @@ Name: Region, Length: 50, dtype: bool</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
+
 <div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
 <pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">KeyError</span>                                  Traceback (most recent call last)
-<span class="ansi-green-fg">/tmp/ipykernel_181/3899766623.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>midwest_sorted<span class="ansi-blue-fg">.</span>get<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;State&#39;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>iloc<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">]</span>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">KeyError</span>                                  Traceback (most recent call last)
+Cell <span class="ansi-green-intense-fg ansi-bold">In[18], line 1</span>
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 1</span> <span class="ansi-yellow-bg">midwest_sorted</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">get</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#39;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">State</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#39;</span><span class="ansi-yellow-bg">)</span><span style="color: rgb(98,98,98)">.</span>iloc[<span style="color: rgb(98,98,98)">0</span>]
 
-<span class="ansi-green-fg">/opt/conda/lib/python3.9/site-packages/babypandas/utils.py</span> in <span class="ansi-cyan-fg">wrapper</span><span class="ansi-blue-fg">(*args, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">     18</span>         <span class="ansi-green-fg">with</span> warnings<span class="ansi-blue-fg">.</span>catch_warnings<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">     19</span>             warnings<span class="ansi-blue-fg">.</span>simplefilter<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;ignore&#34;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">---&gt; 20</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">return</span> func<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     21</span> 
-<span class="ansi-green-intense-fg ansi-bold">     22</span>     <span class="ansi-green-fg">return</span> wrapper
+File <span class="ansi-green-intense-fg ansi-bold">~\Anaconda3\lib\site-packages\babypandas\utils.py:20</span>, in <span class="ansi-cyan-fg">suppress_warnings.&lt;locals&gt;.wrapper</span><span class="ansi-blue-intense-fg ansi-bold">(*args, **kwargs)</span>
+<span class="ansi-green-fg">     18</span> <span class="ansi-bold" style="color: rgb(0,135,0)">with</span> warnings<span style="color: rgb(98,98,98)">.</span>catch_warnings():
+<span class="ansi-green-fg">     19</span>     warnings<span style="color: rgb(98,98,98)">.</span>simplefilter(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">ignore</span><span style="color: rgb(175,0,0)">&#34;</span>)
+<span class="ansi-green-intense-fg ansi-bold">---&gt; 20</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> func(<span style="color: rgb(98,98,98)">*</span>args, <span style="color: rgb(98,98,98)">*</span><span style="color: rgb(98,98,98)">*</span>kwargs)
 
-<span class="ansi-green-fg">/opt/conda/lib/python3.9/site-packages/babypandas/bpd.py</span> in <span class="ansi-cyan-fg">get</span><span class="ansi-blue-fg">(self, key)</span>
-<span class="ansi-green-intense-fg ansi-bold">    325</span>         <span class="ansi-green-fg">if</span> any<span class="ansi-blue-fg">(</span>mask<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    326</span>             k <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">[</span>key<span class="ansi-blue-fg">]</span> <span class="ansi-green-fg">if</span> isinstance<span class="ansi-blue-fg">(</span>key<span class="ansi-blue-fg">,</span> str<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">else</span> key
-<span class="ansi-green-fg">--&gt; 327</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">raise</span> KeyError<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;{} not found in columns&#34;</span><span class="ansi-blue-fg">.</span>format<span class="ansi-blue-fg">(</span>np<span class="ansi-blue-fg">.</span>array<span class="ansi-blue-fg">(</span>k<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">[</span>mask<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    328</span> 
-<span class="ansi-green-intense-fg ansi-bold">    329</span>         f <span class="ansi-blue-fg">=</span> _lift_to_pd<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>_pd<span class="ansi-blue-fg">.</span>get<span class="ansi-blue-fg">)</span>
+File <span class="ansi-green-intense-fg ansi-bold">~\Anaconda3\lib\site-packages\babypandas\bpd.py:327</span>, in <span class="ansi-cyan-fg">DataFrame.get</span><span class="ansi-blue-intense-fg ansi-bold">(self, key)</span>
+<span class="ansi-green-fg">    325</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(0,135,0)">any</span>(mask):
+<span class="ansi-green-fg">    326</span>     k <span style="color: rgb(98,98,98)">=</span> [key] <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(0,135,0)">isinstance</span>(key, <span style="color: rgb(0,135,0)">str</span>) <span class="ansi-bold" style="color: rgb(0,135,0)">else</span> key
+<span class="ansi-green-intense-fg ansi-bold">--&gt; 327</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> <span class="ansi-bold" style="color: rgb(215,95,95)">KeyError</span>(<span style="color: rgb(175,0,0)">&#34;</span><span class="ansi-bold" style="color: rgb(175,95,135)">{}</span><span style="color: rgb(175,0,0)"> not found in columns</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(98,98,98)">.</span>format(np<span style="color: rgb(98,98,98)">.</span>array(k)[mask]))
+<span class="ansi-green-fg">    329</span> f <span style="color: rgb(98,98,98)">=</span> _lift_to_pd(<span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_pd<span style="color: rgb(98,98,98)">.</span>get)
+<span class="ansi-green-fg">    330</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> f(key<span style="color: rgb(98,98,98)">=</span>key)
 
-<span class="ansi-red-fg">KeyError</span>: &#34;[&#39;State&#39;] not found in columns&#34;</pre>
+<span class="ansi-red-intense-fg ansi-bold">KeyError</span>: &#34;[&#39;State&#39;] not found in columns&#34;</pre>
 </div>
 </div>
 
@@ -16385,12 +16404,12 @@ Name: Region, Length: 50, dtype: bool</pre>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Working-with-the-index">Working with the index<a class="anchor-link" href="#Working-with-the-index">&#182;</a></h3><ul>
-<li>We can't use <code>.get</code> because <code>.get</code> is only for columns, and there is no column called <code>'State'</code>.<ul>
-<li>Instead, <code>'State'</code> is the index of the DataFrame.</li>
+<li>We can't use <code>.get</code> because <code>.get</code> is only for columns, and there is no column called <code>'State'</code>. <ul>
+<li>Instead, <code>'State'</code> is the index of the DataFrame. </li>
 </ul>
 </li>
 <li>To extract the index of a DataFrame, use <code>.index</code>.<ul>
-<li>Like <code>.shape</code>, this is an attribute of the DataFrame, not a method. Don't use parentheses.</li>
+<li>Like <code>.shape</code>, this is an attribute of the DataFrame, not a method. Don't use parentheses.  </li>
 </ul>
 </li>
 <li>Access particular elements in the index with <code>[]</code>.</li>
@@ -16421,7 +16440,9 @@ Name: Region, Length: 50, dtype: bool</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
 
@@ -16463,7 +16484,9 @@ Name: Region, Length: 50, dtype: bool</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
 
@@ -16506,7 +16529,7 @@ Name: Region, Length: 50, dtype: bool</pre>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Final solution, which you should build up one step at a time.</span>
-<span class="n">states</span><span class="p">[</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Region&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;Midwest&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Land Area&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">states</span><span class="p">[</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'Region'</span><span class="p">)</span> <span class="o">==</span> <span class="s1">'Midwest'</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">'Land Area'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 
      </div>
@@ -16520,7 +16543,9 @@ Name: Region, Length: 50, dtype: bool</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
 
@@ -16561,8 +16586,8 @@ Name: Region, Length: 50, dtype: bool</pre>
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># You can space your code out like this if needed.</span>
 <span class="p">(</span>
-    <span class="n">states</span><span class="p">[</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Region&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;Midwest&#39;</span><span class="p">]</span>
-    <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Land Area&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">states</span><span class="p">[</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'Region'</span><span class="p">)</span> <span class="o">==</span> <span class="s1">'Midwest'</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">'Land Area'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
@@ -16578,7 +16603,9 @@ Name: Region, Length: 50, dtype: bool</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
 
@@ -16633,7 +16660,9 @@ Name: Region, Length: 50, dtype: bool</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[23]:</div>
 
@@ -16670,7 +16699,7 @@ Name: Region, Length: 50, dtype: bool</pre>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Multiple-conditions">Multiple conditions<a class="anchor-link" href="#Multiple-conditions">&#182;</a></h3><ul>
-<li>To write a query with multiple conditions, use <code>&amp;</code> for &quot;and&quot; and <code>|</code> for &quot;or&quot;.<ul>
+<li>To write a query with multiple conditions, use <code>&amp;</code> for "and" and <code>|</code> for "or".<ul>
 <li><code>&amp;</code>: All conditions must be true.</li>
 <li><code>|</code>: At least one condition must be true.</li>
 </ul>
@@ -16693,7 +16722,7 @@ Name: Region, Length: 50, dtype: bool</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">states</span><span class="p">[(</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Party&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;Republican&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Region&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;South&#39;</span><span class="p">)]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">states</span><span class="p">[(</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'Party'</span><span class="p">)</span> <span class="o">==</span> <span class="s1">'Republican'</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'Region'</span><span class="p">)</span> <span class="o">==</span> <span class="s1">'South'</span><span class="p">)]</span>
 </pre></div>
 
      </div>
@@ -16707,7 +16736,9 @@ Name: Region, Length: 50, dtype: bool</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[24]:</div>
 
@@ -16834,8 +16865,8 @@ Name: Region, Length: 50, dtype: bool</pre>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># You can also add line breaks within brackets.</span>
-<span class="n">states</span><span class="p">[(</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Party&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;Republican&#39;</span><span class="p">)</span> <span class="o">&amp;</span> 
-       <span class="p">(</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Region&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;South&#39;</span><span class="p">)]</span>
+<span class="n">states</span><span class="p">[(</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'Party'</span><span class="p">)</span> <span class="o">==</span> <span class="s1">'Republican'</span><span class="p">)</span> <span class="o">&amp;</span> 
+       <span class="p">(</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'Region'</span><span class="p">)</span> <span class="o">==</span> <span class="s1">'South'</span><span class="p">)]</span>
 </pre></div>
 
      </div>
@@ -16849,7 +16880,9 @@ Name: Region, Length: 50, dtype: bool</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[25]:</div>
 
@@ -16986,7 +17019,7 @@ Name: Region, Length: 50, dtype: bool</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Party&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;Republican&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'Party'</span><span class="p">)</span> <span class="o">==</span> <span class="s1">'Republican'</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -17000,7 +17033,9 @@ Name: Region, Length: 50, dtype: bool</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
 
@@ -17033,7 +17068,7 @@ Name: Party, Length: 50, dtype: bool</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Region&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;South&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'Region'</span><span class="p">)</span> <span class="o">==</span> <span class="s1">'South'</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -17047,7 +17082,9 @@ Name: Party, Length: 50, dtype: bool</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[27]:</div>
 
@@ -17080,7 +17117,7 @@ Name: Region, Length: 50, dtype: bool</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Party&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;Republican&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Region&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;South&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'Party'</span><span class="p">)</span> <span class="o">==</span> <span class="s1">'Republican'</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'Region'</span><span class="p">)</span> <span class="o">==</span> <span class="s1">'South'</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -17094,7 +17131,9 @@ Name: Region, Length: 50, dtype: bool</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[28]:</div>
 
@@ -17139,9 +17178,9 @@ Length: 50, dtype: bool</pre>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span>
-    <span class="n">states</span><span class="p">[(</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Party&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;Republican&#39;</span><span class="p">)</span> <span class="o">&amp;</span> 
-       <span class="p">(</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Region&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;South&#39;</span><span class="p">)]</span>
-    <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Population&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">states</span><span class="p">[(</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'Party'</span><span class="p">)</span> <span class="o">==</span> <span class="s1">'Republican'</span><span class="p">)</span> <span class="o">&amp;</span> 
+       <span class="p">(</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'Region'</span><span class="p">)</span> <span class="o">==</span> <span class="s1">'South'</span><span class="p">)]</span>
+    <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">'Population'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="p">)</span>
 </pre></div>
 
@@ -17156,7 +17195,9 @@ Length: 50, dtype: bool</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[29]:</div>
 
@@ -17314,9 +17355,9 @@ Length: 50, dtype: bool</pre>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span>
-    <span class="n">states</span><span class="p">[(</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Party&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;Republican&#39;</span><span class="p">)</span> <span class="o">&amp;</span> 
-       <span class="p">(</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Region&#39;</span><span class="p">)</span><span class="o">==</span><span class="s1">&#39;South&#39;</span><span class="p">)]</span>
-    <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Population&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">states</span><span class="p">[(</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'Party'</span><span class="p">)</span> <span class="o">==</span> <span class="s1">'Republican'</span><span class="p">)</span> <span class="o">&amp;</span> 
+       <span class="p">(</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'Region'</span><span class="p">)</span><span class="o">==</span><span class="s1">'South'</span><span class="p">)]</span>
+    <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">'Population'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="o">.</span><span class="n">take</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
 <span class="p">)</span>
 </pre></div>
@@ -17332,7 +17373,9 @@ Length: 50, dtype: bool</pre>
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[30]:</div>
 
@@ -17442,33 +17485,34 @@ Length: 50, dtype: bool</pre>
 </ol>
 <details>
     <summary>✅ Click <b>here</b> to see the answers <b>after</b> you've attempted the problems on your own.</summary>
-<ol>
-<li>What is the capital city of the state in the West with the largest land area?</li>
-</ol>
+
+1. What is the capital city of the state in the West with the largest land area?
+
 <pre>
 states[states.get('Region') == 'West'].sort_values(by='Land Area', ascending=False).get('Capital City').iloc[0]
 </pre>
-<ol start="2">
-<li>How many states in the Northeast have more land area than an average US state?</li>
-</ol>
+
+2. How many states in the Northeast have more land area than an average US state?
+
 <pre>
 states[(states.get('Region') == 'Northeast') & 
        (states.get('Land Area') > states.get('Land Area').mean())].shape[0]
 </pre>
-<ol start="3">
-<li>What is the total population of the Midwest, South, and Northeast?</li>
-</ol>
+
+3. What is the total population of the Midwest, South, and Northeast?
+
 <pre>
 states[(states.get('Region') == 'Midwest') | 
        (states.get('Region') == 'South') | 
        (states.get('Region') == 'Northeast')].get('Population').sum()
 </pre>
-<p>     Alternate solution to 3:</p>
+&nbsp;&nbsp;&nbsp;&nbsp; Alternate solution to 3:
+
 <pre>
 states.get('Population').sum() - states[states.get('Region') == 'West'].get('Population').sum()
 </pre>
-</details>
 
+</details>
 </div>
 </div>
 </div>
@@ -17494,7 +17538,9 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[31]:</div>
 
@@ -17543,7 +17589,7 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[32]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">states</span><span class="p">[</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Region&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;West&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Population&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">states</span><span class="p">[</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'Region'</span><span class="p">)</span> <span class="o">==</span> <span class="s1">'West'</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'Population'</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -17557,7 +17603,9 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[32]:</div>
 
@@ -17582,7 +17630,7 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[33]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">states</span><span class="p">[</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Region&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;Midwest&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Population&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">states</span><span class="p">[</span><span class="n">states</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'Region'</span><span class="p">)</span> <span class="o">==</span> <span class="s1">'Midwest'</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'Population'</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -17596,7 +17644,9 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[33]:</div>
 
@@ -17645,7 +17695,7 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[34]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">states</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Region&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">states</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'Region'</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -17659,7 +17709,9 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[34]:</div>
 
@@ -17805,8 +17857,7 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
       <td>3.0</td>
     </tr>
   </tbody>
-</table>
-<p>Let's see what happens under the hood when we run <code>pets.groupby('Species').mean()</code>.</p>
+</table><p>Let's see what happens under the hood when we run <code>pets.groupby('Species').mean()</code>.</p>
 
 </div>
 </div>
@@ -17833,7 +17884,9 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
+
 <div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -17844,9 +17897,10 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
         <iframe
             width="960"
             height="509"
-            src="https://docs.google.com/presentation/d/e/2PACX-1vTgVlFngQcLMYHP-z1vq5lVXjsBgcHebc-3TX7SW6L_gjX6TD1gsflvVDQUpWiDdeEPqJASenUIfBVd/embed?start=false&loop=false&delayms=60000&rm=minimal"
+            src="https://docs.google.com/presentation/d/1IBMwlqBtnD-Ml1Zhmqs6pnYV6jcYayr3VGFqN9Dg3xk/embed?start=false&loop=false&delayms=60000&rm=minimal"
             frameborder="0"
             allowfullscreen
+            
         ></iframe>
         
 </div>
@@ -17877,8 +17931,8 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pets</span> <span class="o">=</span> <span class="n">bpd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
-    <span class="n">Species</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;hamster&#39;</span><span class="p">],</span>
-    <span class="n">Color</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="s1">&#39;golden&#39;</span><span class="p">,</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="s1">&#39;golden&#39;</span><span class="p">,</span> <span class="s1">&#39;golden&#39;</span><span class="p">],</span>
+    <span class="n">Species</span><span class="o">=</span><span class="p">[</span><span class="s1">'dog'</span><span class="p">,</span> <span class="s1">'cat'</span><span class="p">,</span> <span class="s1">'cat'</span><span class="p">,</span> <span class="s1">'dog'</span><span class="p">,</span> <span class="s1">'dog'</span><span class="p">,</span> <span class="s1">'hamster'</span><span class="p">],</span>
+    <span class="n">Color</span><span class="o">=</span><span class="p">[</span><span class="s1">'black'</span><span class="p">,</span> <span class="s1">'golden'</span><span class="p">,</span> <span class="s1">'black'</span><span class="p">,</span> <span class="s1">'white'</span><span class="p">,</span> <span class="s1">'golden'</span><span class="p">,</span> <span class="s1">'golden'</span><span class="p">],</span>
     <span class="n">Weight</span><span class="o">=</span><span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
     <span class="n">Age</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="p">)</span>
@@ -17896,7 +17950,9 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[36]:</div>
 
@@ -17989,7 +18045,7 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[37]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pets</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Species&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pets</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'Species'</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -18003,7 +18059,9 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[37]:</div>
 
@@ -18109,7 +18167,9 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[38]:</div>
 
@@ -18235,7 +18295,7 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[39]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">states</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Region&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">states</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'Region'</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -18249,7 +18309,9 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[39]:</div>
 
@@ -18329,12 +18391,12 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[40]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Note the use of .index – remember, the index isn&#39;t a column!</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Note the use of .index – remember, the index isn't a column!</span>
 <span class="p">(</span>
     <span class="n">states</span>
-    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Region&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'Region'</span><span class="p">)</span>
     <span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-    <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Population&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">'Population'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
@@ -18350,7 +18412,9 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[40]:</div>
 
@@ -18405,7 +18469,7 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ol start="2">
+<ol>
 <li><strong>Choose an aggregation method</strong>.<ul>
 <li>The aggregation method will be applied <strong>within</strong> each group.</li>
 <li>The aggregation method is applied individually to each column.<ul>
@@ -18456,7 +18520,9 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[41]:</div>
 
@@ -18582,7 +18648,7 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[42]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">states</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Region&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">states</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'Region'</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -18596,7 +18662,9 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[42]:</div>
 
@@ -18675,7 +18743,7 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>*<strong>Tip:</strong>* look for keywords &quot;per,&quot; &quot;for each,&quot; and &quot;indexed by&quot; when solving problems.</p>
+<p><strong><em>Tip:</em></strong> look for keywords "per," "for each," and "indexed by" when solving problems.</p>
 
 </div>
 </div>
@@ -18687,8 +18755,8 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ol start="2">
-<li>The aggregation method is applied separately to each column. If it does not make sense to apply the aggregation method to a certain column, the column will disappear. 🐇🎩</li>
+<ol>
+<li>The aggregation method is applied separately to each column. If it does not make sense to apply the aggregation method to a certain column, the column will disappear. 🐇🎩  </li>
 </ol>
 
 </div>
@@ -18701,7 +18769,7 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ol start="3">
+<ol>
 <li>Since the aggregation method is applied to each column <strong>separately</strong>, the rows of the resulting DataFrame need to be interpreted with care.</li>
 </ol>
 
@@ -18716,7 +18784,7 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[43]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">states</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Region&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">states</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'Region'</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -18730,7 +18798,9 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[43]:</div>
 
@@ -18836,7 +18906,9 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[44]:</div>
 
@@ -18860,7 +18932,7 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ol start="4">
+<ol>
 <li>The column names don't make sense after grouping with the <code>.count()</code> aggregation method.</li>
 </ol>
 
@@ -18875,7 +18947,7 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[45]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">states</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Region&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">states</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'Region'</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -18889,7 +18961,9 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[45]:</div>
 
@@ -18983,7 +19057,7 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 <h3 id="Dropping,-renaming,-and-reordering-columns">Dropping, renaming, and reordering columns<a class="anchor-link" href="#Dropping,-renaming,-and-reordering-columns">&#182;</a></h3><p>Consider dropping unneeded columns and renaming columns as follows:</p>
 <ol>
 <li>Use <code>.assign</code> to create a new column containing the same values as the old column(s).</li>
-<li>Use <code>.drop(columns=list_of_column_labels)</code> to drop the old column(s).<ul>
+<li>Use <code>.drop(columns=list_of_column_labels)</code> to drop the old column(s). <ul>
 <li>Alternatively, use <code>.get(list_of_column_labels)</code> to keep only the columns in the given list. The columns will appear in the order you specify, so this is also useful for reordering columns!</li>
 </ul>
 </li>
@@ -19000,10 +19074,10 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[46]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">states_by_region</span> <span class="o">=</span> <span class="n">states</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Region&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">states_by_region</span> <span class="o">=</span> <span class="n">states</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'Region'</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 <span class="n">states_by_region</span> <span class="o">=</span> <span class="n">states_by_region</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
-                    <span class="n">States</span><span class="o">=</span><span class="n">states_by_region</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Capital City&#39;</span><span class="p">)</span>
-                    <span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">([</span><span class="s1">&#39;States&#39;</span><span class="p">])</span>
+                    <span class="n">States</span><span class="o">=</span><span class="n">states_by_region</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'Capital City'</span><span class="p">)</span>
+                    <span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">([</span><span class="s1">'States'</span><span class="p">])</span>
 <span class="n">states_by_region</span>
 </pre></div>
 
@@ -19018,7 +19092,9 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[46]:</div>
 
@@ -19099,7 +19175,6 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 <center>
 <img width=40% src="images/imdb.png"/>
 </center>
-
 </div>
 </div>
 </div>
@@ -19111,7 +19186,7 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Extra-practice">Extra practice<a class="anchor-link" href="#Extra-practice">&#182;</a></h3><p>We won't cover this section in class. Instead, it's here for you to practice with some harder examples.</p>
-<p>The video below walks through the solutions (it's also linked <a href="https://youtu.be/xg7rnjWnZ48">here</a>). You can also see the solutions by clicking the &quot;✅ Click <b>here</b> to see the answer.&quot; button below each question.</p>
+<p>The video below walks through the solutions (it's also linked <a href="https://youtu.be/xg7rnjWnZ48">here</a>). You can also see the solutions by clicking the "✅ Click <b>here</b> to see the answer." button below each question.</p>
 
 </div>
 </div>
@@ -19125,7 +19200,7 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
-<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;xg7rnjWnZ48&#39;</span><span class="p">)</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">'xg7rnjWnZ48'</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -19139,7 +19214,9 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[47]:</div>
 
@@ -19153,6 +19230,7 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
             src="https://www.youtube.com/embed/xg7rnjWnZ48"
             frameborder="0"
             allowfullscreen
+            
         ></iframe>
         
 </div>
@@ -19183,7 +19261,7 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[48]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">imdb</span> <span class="o">=</span> <span class="n">bpd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/imdb.csv&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Title&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Rating&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">imdb</span> <span class="o">=</span> <span class="n">bpd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'data/imdb.csv'</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'Title'</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">'Rating'</span><span class="p">)</span>
 <span class="n">imdb</span>
 </pre></div>
 
@@ -19198,7 +19276,9 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[48]:</div>
 
@@ -19317,7 +19397,7 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[49]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">imdb</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Decade&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">imdb</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'Decade'</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -19331,7 +19411,9 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[49]:</div>
 
@@ -19430,8 +19512,8 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[50]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># We&#39;ll learn how to make plots like this in the next lecture!</span>
-<span class="n">imdb</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Decade&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">);</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># We'll learn how to make plots like this in the next lecture!</span>
+<span class="n">imdb</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'Decade'</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s1">'Year'</span><span class="p">);</span>
 </pre></div>
 
      </div>
@@ -19445,7 +19527,9 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
+
 <div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
@@ -19453,8 +19537,7 @@ states.get('Population').sum() - states[states.get('Region') == 'West'].get('Pop
 
 
 <div class="jp-RenderedImage jp-OutputArea-output ">
-<img src="data:image/png;base64,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
-"
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAzYAAAHBCAYAAAC7Ry7JAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjcuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/bCgiHAAAACXBIWXMAAA9hAAAPYQGoP6dpAABchElEQVR4nO3dd3hUZd7G8e9zMiEkQBKqoYt0RBARURfFhgVxEYXgLthA1hV07fqu2EDKKir2XhCstIgKIguCigUWkS5gQcEAUkMKaZPzvH8MDESKqXNmkvtzXbmuzMzJ5E58iLnznPkdY621iIiIiIiIRDDH6wAiIiIiIiKlpWIjIiIiIiIRT8VGREREREQinoqNiIiIiIhEPBUbERERERGJeCo2IiIiIiIS8VRsREREREQk4qnYiIiIiIhIxFOxERERERGRiKdiIyIiIiIiEc/ndYAj2b17N36/3+sYANStW5ft27d7HUMqCa03CTWtOQklrTcJNa25yObz+ahZs2bRji3nLCXm9/vJz8/3OgbGGCCQx1rrcRqp6LTeJNS05iSUtN4k1LTmKhediiYiIiIiIhFPxUZERERERCKeio2IiIiIiEQ8FRsREREREYl4YTs8QEREREQk0uTm5pKbm+t1jIgTExNDTExMqZ5DxUZEREREpAxkZWVhjKFGjRrBiWzy56y1ZGdnk5WVRbVq1Ur8PDoVTURERESkDPj9fuLi4lRqiskYQ1xcXKmvYaliIyIiIiJSBlRoSqe03z8VGxERERERiXgqNiIiIiIiEvGKNTxg8uTJTJ06tdB9CQkJvPzyy0DghT9Tpkxh3rx5ZGZm0rJlSwYPHkzjxo3LLrGIiIiIiMgfFHsqWuPGjbnvvvuCtx3nwKbPjBkzmDlzJkOHDqV+/fpMnz6dUaNG8cQTTxAbG1s2iUVEREREpExYa7niiiuIiori7bffLvTYhAkT+M9//sO8efNo2LChRwmLrtinojmOQ2JiYvAtPj4eCHxTZs2aRZ8+fejatStNmjRh2LBh5ObmsnDhwjIPLiIiIiIipWOM4fHHH+e7775j0qRJwfs3btzImDFjGDFiRJmXmvz8/DJ9vv2KvWOzdetWrr/+enw+Hy1btuRvf/sbxxxzDNu2bSMtLY2OHTsGj42OjqZdu3asW7eOHj16HPb58vPzC31xxpjg7k44TJbYnyEcskjFp/UmoaY1J6Gk9SahZDP2UDDtDdLqN4QLLvdk3VlrIc+Di3VWiSnW19uwYUNGjBjBvffeS/fu3WncuDG333473bp1o1OnTlx55ZV88803xMXFceaZZzJixAhq1aoFwPz583nyySdZt24djuPQuXNnRo4cybHHHgvApk2bOPXUU3n++eeZOHEiS5cuZezYsfTv3/+wWUrz38lYa21RD/7uu+/Izc2lQYMGpKWlMX36dFJTU3n88cfZvHkz9913Hy+88ELwCwV48cUX2bFjB8OHDz/sc/7xdTvNmjXj4YcfLvEXJCIiIiKVW+7aVewcezcFO34HoO6Y56nasUu5f96ff/6ZGjVqBG/b3Bxyr+9T7p/3j2JeTMHEVC32x1111VWkp6fTq1cvHn/8cT755BPOP/98Bg4cSHJyMjk5OYwcOZKCggKmT58OwIcffogxhnbt2pGVlcUjjzzCxo0bmT9/Po7jsHHjRk4++WSaNGnCgw8+yAknnEBMTAxJSUmHfP6MjAyOO+64En/dxdqx6dSpU/D9Jk2a0KpVK2666SY+++wzWrZsCRzasv6sN/Xp04devXoFb+//+O3bt5f6Ij1lwRhDUlISW7du/dOvRaS0tN4k1LTmJJS03qS8WWuxCz7GffdlKPBDlA8K/Ox44zmi7hxT7p8/Ly+v0JlItpxOufoz+fn5GCeq2B/38MMPc8455/DNN9/w0ksvMWnSJNq3b89dd90VPObRRx+lS5curF27lubNm3PhhRcWeo5x48bRoUMHVq9eTZs2bYK/zw8ePJgLLrigUMY/ysvLY8uWLYXu8/l81K1bt0j5i30q2sGqVq1KkyZN2LJlC126BFpwWloaNWvWDB6Tnp5OQkLCEZ8jOjqa6Ojowz4WTj/0rLVhlUcqNq03CTWtOQklrTcpDzY3F/vmc9hv5gfuOOk0oi4dSMHIm7HrVuKuW4VpdXxoQ1WJwXlmcmg/577PWxJ16tRhwIABfPLJJ1x00UW8/fbbfPXVV8ENjIP9+uuvNG/enF9++YVx48axdOlSdu3aheu6AKSmptKmTZvg8Qe/XOVoSvOzoVTFJj8/n9TUVNq2bUu9evVITExkxYoVNGvWDAC/38+aNWsYMGBAaT6NiIiIiMgR2W2bcZ//D/z2CxgHc/lVmPP7YByHauddQtbsFNyZ7xHVamRIcxljoASnhHnJ5/MRFRXY7bHW0qNHD+65555DjjvmmGMAuOaaa2jQoAGPPPIISUlJuK7LOeecc8iOTCgmJBer2EycOJGTTz6ZOnXqsGfPHqZNm0Z2djbdu3fHGEPPnj1JSUmhfv36JCUlkZKSQkxMDN26dSuv/CIiIiJSidlli3BfewKys6BGAs71d2FanxB8PD75WrL++wGsWYb9aS2meZsjP5kU0r59e2bNmkXjxo3x+Q6tDbt27eKHH37g4YcfpmvXrgAsXrw41DGDilVsdu3axZNPPkl6ejrx8fG0bNmS0aNHB8976927N3l5ebzyyitkZWXRokULhg8frmvYiIiIiEiZsm4B9v23sB/vG0LVvA3OP+/GJNYudJzvmAaYU8/GfjkXd+Zkov51vwdpI9M111zD22+/zdChQ7nhhhuoVasWv/zyCzNmzGDcuHEkJiZSs2ZN3nzzTerVq0dqaipjx471LG+xis0tt9xy1MeNMSQnJ5OcnFyaTCIiIiIiR2Qz9uC+/Ch8vxwAc+4lmL7XYHyHf92207MfBV99CiuXYH/9EdO0RSjjRqykpCTef/99xowZw4ABA8jNzaVRo0acddZZOI6DMYbnnnuO+++/n3PPPZfjjjuOhx56iL59+3qSt1jjnkNp+/bt5XbxnuIwxlC/fn22bNmiFzpKudN6k1DTmpNQ0nqTsmB/Xof7wsOwe0fgei1X3YjTtfthjz14zRW88hj2mwVwYleihh3+MiSltf+sJimZw33/oqOjizwVzSmPUCIiIiIiZclaizt/Fu4j/w6UmmMa4tzz2BFLzR+ZnslgDCxbhN20oZzTihdUbEREREQkrNncXOxr47FvvxC4Ps1Jp+EMfwzTsEmRn8PUb4Q5OTDQyp35XnlFFQ+p2IiIiIhI2LLbNuOOvSNwGpnjYPpei/PP/8PExhX7uUzPfoF3ln6NTd1YtkHFcyo2IiIiIhKW7LJFuKNuh9RfA6OcbxuFc0GfwPVhSsA0OhZOOg2sxc7y4MKZUq5UbEREREQkrNiCAtzpE3GfHR24Pk3zNjj3P4Fp3b7Uz+1cHJjea/+3ELs1tdTPJ+FDxUZEREREwoZNT8N94oHg9WnMuZfg3DHmkOvTlJRp0hw6ngLWxc6aUibPeTDXdcv8OSuDsvi+qdiIiIiISFiwP6/DHXUbrF0BMVUxQ+7AuWII5jBXvS8N5+L+gc+3aAF2+9Yye964uDgyMjJUborJdV0yMjKIiyv+66YOVrarRERERESkmKy12AUfY997JTD1LKkhzj//XaypZ8VhmrWE9ifBqqXYj6dirrqxTJ7X5/NRrVo1MjMzy+T5KpNq1arhK2WBVbEREREREc/Y3Fzsm88Gpp5BYJTzNTeXaOpZcTgX98ddtRT71TzsxcmY2vXK5Hl9Pp8u0ukRnYomIiIiIp6wv/9hlHO/ko9yLi7Toi206QAFBdjZ08r980n5U7ERERERkZCzy77BHX1bYJRzfGJglPP5JR/lXBJOrysCWRb+F7t7Z8g+r5QPFRsRERERCZnAKOc3cJ8dA9l7oUVbnPvGl8ko5+IyrdtDy3bg92M/mR7yzy9lS8VGRERERELiwCjnwKlf5txLcG4fXWajnEsiuGvz+SfYPbs9yyGlp2IjIiIiIuXO/rQW96Fby32Uc7G17QjHtYb8POycFG+zSKmo2IiIiIhIubHW4s6fiTvuHkjbGRjlfM+jOKec6XU0AIwxB3ZtFnyMzdjjcSIpKRUbERERESkXNjcH+9p47NsvBq5Pc9LpOPc8hmlQPtenKbH2J0HTFpCXi/3v+16nkRJSsRERERGRMhcY5XznH0Y53x2SUc7FFdi1SQbAfjoLm5XhcSIpCRUbERERESlT4TDKudg6doVGzSA3Gzv3A6/TSAmo2IiIiIhImbAFBbjTwmOUc3EV2rWZ9xF2b5bHiaS4VGxEREREpNSCo5xn7xvlfN5fPR/lXGydToP6jSE7C/vpR16nkWJSsRERERGRUjlklPM/7sTpf533o5yLyTgO5uJ9uzZzP8Dm7PU4kRSHio2IiIiIlMiho5wbBUY5dznD62glZrp0g2MaQlYGdv7HXseRYlCxEREREZFis7k52FcfPzDKufPpOMMfDb9RzsVknChMz34A2Dkp2NwcjxNJUanYiIiIiEixBEc5L/ps3yjnQTjX342pGn6jnEvCdO0OdZMgMx372Wyv40gRqdiIiIiISJHZ7/4wyvn2UTjnXxreo5yLyURFYS7qC4D9ZDo2L9fjRFIUKjYiIiIi8qeCo5yf2z/KuV1glHOr8B/lXBLmtLOhVl1IT8N+8V+v40gRqNiIiIiIyFHZ9DTc8fcfNMq5N87toyJrlHMxGV/0gV2b2dOw+fkeJ5I/o2IjIiIiIkcUHOW8buW+Uc534fQfHHGjnEvC/OU8SKwNaTuxX871Oo78CRUbERERETmEtRb3048OM8q5m9fRQsZER2MuvBwA+/FUrF+7NuFMxUZERERECgmOcn7npQo1yrkkzBk9ID4Rdm3Hfj3f6zhyFCo2IiIiIhJkt6ZW6FHOxWWqxGAu6APs27UpKPA4kRyJio2IiIiIAGCXfo075vbAKOeEmhVylHNJmO4XQfV42L41UPgkLKnYiIiIiFRywVHOz489MMr53oo7yrm4TExVzPmXAmBnTcG62rUJRyo2IiIiIpXYkUc51/I4WXgxZ/eEajXg91Tski+9jiOHoWIjIiIiUklV5lHOxWWqxmHOuwQAO3My1nU9TiR/pGIjIiIiUskcdpTz8Mcq1SjnkjDn9ILYarB5I3z3jddx5A9UbEREREQqEZubg33lwChn0/kvgVHO9Rt7HS3smbjqmHN7AeB+9B7WWo8TycFUbEREREQqieAo58X7RjknD8Zcf1elHeVcEua8v0JMLPy2AZYv9jqOHETFRkRERKQSOHSU82icHr0r/Sjn4jLVamDO6Qlo1ybcqNiIiIiIVGC2oAB36oQDo5xb7h/lfLzX0SKW6XEpVImBX3+EVUu9jiP7qNiIiIiIVFA2fXdglPMn04F9o5xv0yjn0jI1EjBnXQSA+9G72rUJEyo2IiIiIhVQ4VHOsTjXa5RzWTLn94HoKvDzOvh+uddxBBUbERERkQrFWos77yPccf+GtF1Qv3Fg6tnJGuVclkxCTcyZFwDgznzP4zQCKjYiIiIiFUZglPNj2HdfgoKCwCjne8ZplHM5MRdcBj4frF+NXbfK6ziVnoqNiIiISAVgt6bijrkDu/hzjXIOEVOzNuYv5wHatQkHKjYiIiIiEc4u/Rp39G2weaNGOYeYuagvREXB98uxP37vdZxKTcVGREREJEIVGuWck61Rzh4wtethTjsH0K6N11RsRERERCLQIaOce2iUs1fMRX3BcWDVUuyGH7yOU2mp2IiIiIhEGPvj94eOck7WKGevmHr1MV27A9q18ZKKjYiIiEiECI5yfvQejXIOM6ZnPzAOLF+M3fiT13EqJRUbERERkQhwyCjnk7vh3POoRjmHCZPUCNMlUDDdmZM9TlM5qdiIiIiIhLlCo5yjojD9B2P+cSemaqzX0eQgpmdy4J2lX2NTf/U2TCWkYiMiIiISxuz61YeOcj5Po5zDkWnYBDqfDoDVrk3IqdiIiIiIhCn760+4zzwUGOXcYt8o55btvI4lR+Fc3B8Au2QhdstvHqepXFRsRERERMKQ3fIb7hMPQPZeaHU8zq0jNMo5ApjGzeDErmAtdtYUr+NUKio2IiIiImHG7tyGO/5+yEyHpi1wbrwPUyXG61hSRE6vfbs2iz7DbtvscZrKQ8VGREREJIzY9N24j98Hu3cExjnf/CAmNs7rWFIMpmkLaN8ZrIudNdXrOJWGio2IiIhImLB7M3HHPwjbtkDteji3jMDUiPc6lpRAcNfmm/nYHb97nKZyULERERERCQM2Nwf3qZHw2waIT8S5bSSmVh2vY0kJmeZtoG1HKCjAfjzN6ziVgoqNiIiIiMdsfj7uc2Php7UQVy0wKKBeA69jSSk5va4AwH45F7tru8dpKj4VGxEREREP2YIC3FcegzXfQZUYnH89gGnUzOtYUgZMq+OhVXso8GNnT/c6ToWnYiMiIiLiEWstdtKzsPQr8Plwht0TOIVJKozga22+mINN2+VxmopNxUZERETEA9Za7OTXsF/OBePgDLkD066T17GkrLXpAM3bgD8f+0mK12kqNBUbEREREQ/Yme9h584AwFx9E+ak0z1OJOXBGHNg1+bzj7Hpad4GqsBKVWxSUlJITk5mwoQJwfustUyePJnrr7+eAQMG8OCDD7Jp06bS5hQRERGpMNx5H2FnvA2A6X8dzl/O9TiRlKvjT4JjW0JeHnbO+16nqbBKXGx+/PFH5s6dS9OmTQvdP2PGDGbOnMmgQYMYO3YsiYmJjBo1iuzs7FKHFREREYl07lefYt99CQBzyd9wzvurx4mkvBXatVkwC5uR7nGiiqlExSYnJ4enn36a66+/nmrVqgXvt9Yya9Ys+vTpQ9euXWnSpAnDhg0jNzeXhQsXllloERERkUhkl32DfeMpAMy5l2AuucLjRBIyHbpA42aQm4Od+4HXaSokX0k+6JVXXqFTp0506NCB6dMPjK7btm0baWlpdOzYMXhfdHQ07dq1Y926dfTo0eOQ58rPzyc/Pz942xhDbGxs8H2v7c8QDlmk4tN6k1DTmpNQquzrzf1+Oe6Lj4DrYk4/F6f/dRhHL3cuT+G05owx0OsK3OfHYud/BBf2wcRV9zpWhVLsYvPll1+yYcMGxo4de8hjaWlpACQkJBS6PyEhgR07dhz2+VJSUpg6dWrwdrNmzXj44YepW7ducaOVq6SkJK8jSCWi9SahpjUnoVQZ11vu2lVsf3Y0+P3EnnY2tf9vNCaqRH9flhIIlzVne/bh91mTyf/1J6otWkDC34d4HalCKda/qB07djBhwgSGDx9OlSpVjnjcH1uxtfaIx/bp04devXod8rHbt2/H7/cXJ165MMaQlJTE1q1bj/p1iJQFrTcJNa05CaXKut5s6q8UPPx/kJONaXsieVfdxNZtugp9KITjmnMvuBxeeoT0lDfJOvUcTGyc15HCms/nK/KGR7GKzc8//8yePXv4v//7v+B9ruvy/fffM3v2bJ544gkgsHNTs2bN4DHp6emH7OLsFx0dTXR09GEfC5cFCPtmzYdRHqnYtN4k1LTmJJQq03qz27bgPn4f7M2E41pjhv4bfL5K8/WHi7Bac51Pg6SGsDUV99OPcHr28zpRhVGsYnPCCSfw6KOPFrrv+eefp0GDBvTu3ZtjjjmGxMREVqxYQbNmzQDw+/2sWbOGAQMGlF1qERERkTBnd+/EHX8/7NkNDZvi/OsBTNVYr2OJx4wThbk4GfvqeOx/38ee00vroowUq9jExsbSpEmTQvfFxMRQo0aN4P09e/YkJSWF+vXrk5SUREpKCjExMXTr1q3sUouIiIiEMZuZHig1O36Hukk4t47EVNMLxSXAdDkT+8E7sH0r9rPZmAv6eB2pQijzV6317t2bvLw8XnnlFbKysmjRogXDhw8PTjoTERERqchszl7cJ0fAlk2QWBvntocwCTX//AOl0jBR+3ZtJjyFnZOCPasnJibG61gRr9TF5sEHHyx02xhDcnIyycnJpX1qERERkYhi83JxnxkNv/wA1Wvg3DYSU+cYr2NJGDJdz8J++C7s3Ib94hOMLtRaahqeLiIiIlIGrN+P+9I4WLcSqsbi3DICU7+x17EkTBmfD9OzLwD2k+nY/DyPE0U+FRsRERGRUrKui53wJCxfDNFVcG68D9O0hdexJMyZ086FmnUgbRd24Vyv40Q8FRsRERGRUrDWYt95CbvoM4iKwvnn3ZjW7b2OJRHAREdjLrwMADt7Ktaf73GiyKZiIyIiIlIK9v23sAtmgTGYa2/BdOjidSSJIOaM8yGhFuzagf3qU6/jRDQVGxEREZEScj9Jwc6aDID5+z9xunb3OJFEGhNdJTju2X48Fev3e5wocqnYiIiIiJSA+8Uc7NTXATCXXYVz1kUeJ5JIZc68EGokwI7fsYs/8zpOxFKxERERESkm938LsZOeBcBceDnORX09TiSRzMTEYM6/FAA7cwrWLfA2UIRSsREREREpBrvqW+yrj4O1mDMvxFx2ldeRpAIwZ/WE6jVg22bs/xZ6HSciqdiIiIiIFJH9YQ3u82OhwI/pcgZmwPUYY7yOJRWAqRqLOa83AHbmZKzrepwo8qjYiIiIiBSB3fgT7tMjIS8PTjgZM+hWjBPldSypQMzZF0NcNdiyCZZ+5XWciKNiIyIiIvIn7NbfcJ94ELL3Qst2ONffjfH5vI4lFYyJq4Y59xIA3I/e065NManYiIiIiByF3bkdd/z9kLEHmjTHufE+TEyM17GkgjLn/hWqxkLqr7B8sddxIoqKjYiIiMgR2PTdgVKzawckNcK55UFMXDWvY0kFZqpVx5zTC9i3a2Otx4kih4qNiIiIyGHYvZm44x+E31Ohdj2cW0diaiR4HUsqAXNeb4ipCht/gpVLvI4TMVRsRERERP7A5ubiPv0Q/LYB4hMDpaZWHa9jSSVhasRj9l3wVbs2RadiIyIiInIQ68/HfX4M/Pg9xFXDuXUE5pgGXseSSsacfylUqQIb1sOaZV7HiQgqNiIiIiL7WLcA+8rjsPo7qBKD868HMI2aeR1LKiETXxNzxgUAuB+9q12bIlCxEREREQGstdhJz2G//RJ8Ppxh92Cat/E6llRi5sLLwBcd2D1ct9LrOGFPxUZEREQqPWstdurr2IX/BePgDLkD066T17GkkjOJtTHdegCB19rI0anYiIiISKVnZ03BznkfAHP1jZiTTvc2kMg+5sLLIcoH61Zif1jjdZywpmIjIiIilZr76UfY998EwPQfjPOX8zxOJHKAqV0Xc/o5gHZt/oyKjYiIiFRa7jfzse+8BIDpdQXOeb09TiRyKHNRX3AcWPMd9ud1XscJWyo2IiIiUinZZYuwrz8JgDn3Esxf/+ZxIpHDM3WTMKeeDWjX5mhUbERERKTSsWtX4L74CLgu5rRzMMmDMcZ4HUvkiEzPfmAcWLkE++tPXscJSyo2IiIiUqnYDetxnxkN/nw48VTM1TdhHP1KJOHNHNMAc8oZgHZtjkT/ikVERKTSsKm/4j45AnKzoW1HnH/cgYmK8jqWSJGYi5PBGFj2Dfa3DV7HCTsqNiIiIlIp2O1bccc/AFkZ0KwVztB7MNFVvI4lUmSmfmNM578AYGdO8ThN+FGxERERkQrPpu3Effw+2LMLGjbFufkBTNVYr2OJFJu5OBkA++2X2C2bPE4TXlRsREREpEKzmemBnZodv0PdJJxbRmCq1fA6lkiJmEbHQqdTwVrszMlexwkrKjYiIiJSYdmcvbhPjYTNGyGxFs6tIzGJtbyOJVIqzsX9AbCLv8D+vtnjNOFDxUZEREQqJJufF5h+tmE9VK8RKDV1k7yOJVJqpmlzOOFksC52ll5rs5+KjYiIiFQ41u/HfWkcrFsJVWNxbn4Q06CJ17FEyozTa9+uzTfzsdu3epwmPKjYiIiISIViXRf7xlOwbBH4onFuvBdzbEuvY4mUKXNca2jXCVwX+/FUr+OEBRUbERERqTCstdh3X8Z+swCionD++X+Y1id4HUukXDiX7Nu1+epT7M7tHqfxnoqNiIiIVBh2xlvY+TPBGMy1t2A6dvE6kki5MS3aQesToMCPnT3N6zieU7ERERGRCsGdkxIcf2v+fj1O1+4eJxIpf84lVwBgF87B7t7pcRpvqdiIiIhIxHO/mIOd8joAps+VOGf19DiRSIi0ag8t2oHfj/1kutdpPKViIyIiIhHNfvsldtJzAJgL+mAu6utxIpHQMcYcmJD2+SfYPbs9TuQdFRsRERGJWHbVUtyXHwPrYs44H3P5NRhjvI4lElrtToRmrSA/Dzvnfa/TeEbFRkRERCKS/XEN7vNjoMCP6XIGZuANKjVSKRXatfnsY2xGuseJvKFiIyIiIhHHbvwZ96mHIC8P2nfGDLoF40R5HUvEOyecDE2aQ24Odu4Mr9N4QsVGREREIordmor7xAOQnQUt2wWuVeOL9jqWiKcK7dp8+hE2K8PjRKGnYiMiIiIRw+7cjjv+PsjYA02Ow7nxPkxMjNexRMJDx1Og0bGQk42d96HXaUJOxUZEREQigk1Pwx1/P+zaAUkNcW4ZgYmr5nUskbBhHAfn4mQA7NwPsXuzPE4UWio2IiIiEvbs3izcJx+E31OhVl2cW0diaiR4HUsk/Jx0OtRvDNlZ2PkzvU4TUio2IiIiEtZsbi7u0w/Bxp+hRkKg1NSq63UskbBkHAezf9fmvzOwOXs9ThQ6KjYiIiIStqw/H/eFsfDjGoitFig1SQ29jiUS1kyXblCvAWRlYBd87HWckFGxERERkbBk3QLsq+Nh1VKoEoPzr/swjZt5HUsk7BknCnNxPwDsnPexubkeJwoNFRsREREJO9Za7JvPY5cshCgfzg3/xrRo53UskYhhTukOdY6BjD3Yz2d7HSckVGxEREQkrFhrsVMnYL+YA8bBGXI7pv1JXscSiSjG58P03Ldr88l0bF7F37VRsREREZGwYmdNwc5JAcBcNQzT+S8eJxKJTOa0s6FWXdizG7vwv17HKXcqNiIiIhI23PmzsO+/CYBJHozTrYfHiUQil/FFYy68HAA7ezo2P9/jROVLxUZERETCgvvNAuzbLwBgevXH6dHb40Qikc90Ow8Sa8HuHdiv5nkdp1yp2IiIiIjn7PLF2NefAMCc0wvz1797G0ikgjDRVTAXXAaA/Xgq1u/3OFH5UbERERERT9l1K3FfeBhcF3Pq2Zj+12GM8TqWSIVhzrgA4hNh5zbsogVexyk3KjYiIiLiGbvhB9ynR4E/H07sirnmXxhHv56IlCUTE4M5vw8AduZkbEGBx4nKh35yiIiIiCds6kbcJx+E3Gxo0wHnH3dioqK8jiVSIZnuF0L1eNi+Ffu/z72OUy5UbERERCTk7PatuE/cD1kZ0KwVzrB7MNFVvI4lUmGZqrGYfQM57MzJWLfi7dqo2IiIiEhI2bRduOPvh7Rd0LApzs0PYKrGeR1LpMIzZ18McdVhayr226+8jlPmVGxEREQkZAoy9lAw/n7YvhXqJuHcMgJTrYbXsUQqBRMbhznvrwDYj97Duq7HicqWio2IiIiEhM3JZscDN0Pqr5BYC+fWkZjEWl7HEqlUzLm9IDYONm+EZd94HadMqdiIiIhIubM5eyl4agR561ZBtRo4t4zE1E3yOpZIpWPiqmPO6QWA+9F7WGs9TlR2VGxERESkXNm9mbjjH4D1qzHVqhN1y4OYhk28jiVSaZnz/goxsbBpA6z4n9dxyoyKjYiIiJQbm5WB+/j98PM6iKtOvdHPY5q18jqWSKVmqsdjzu4JVKxdGxUbERERKRc2Yw/uo/fCrz9C9Xii7hxDlZZtvY4lIhAY/VylCvzyA6xe6nWcMuErzsFz5sxhzpw5bN++HYBGjRrRt29fOnXqBIC1lilTpjBv3jwyMzNp2bIlgwcPpnHjxmWfXERERMKW3bMb97F7YcsmiE/EuW0UplFTr2OJyD4mPhFz5kXYuTNwP3oP5/iTMMZ4HatUirVjU6tWLf7+978zduxYxo4dS/v27XnkkUfYtGkTADNmzGDmzJkMGjSIsWPHkpiYyKhRo8jOzi6X8CIiIhJ+7O6duOPuCZSaxNo4d47Va2pEwpC5oA/4ouGntbB2hddxSq1Yxebkk0/mpJNOokGDBjRo0IC//e1vVK1alR9++AFrLbNmzaJPnz507dqVJk2aMGzYMHJzc1m4cGF55RcREZEwYnduwx33b/g9FWrVxblzDCapodexROQwTGItzBnnA4HX2kS6Yp2KdjDXdfn666/Jzc2lVatWbNu2jbS0NDp27Bg8Jjo6mnbt2rFu3Tp69Ohx2OfJz88nPz8/eNsYQ2xsbPB9r+3PEA5ZpOLTeisZm7YTd+6HOCf/BXNsS6/jRBStOSlLdvvWwE7Nru1QN4moO0ZjatcLPq71JqGmNffnnIv6UvDFJ7B+FfywGtOqvdeRSqzYxWbjxo0MHz6c/Px8qlatyh133EGjRo1Yt24dAAkJCYWOT0hIYMeOHUd8vpSUFKZOnRq83axZMx5++GHq1q1b3GjlKilJs/YldLTeis66LtvH30/u6u8omDuDmtffQbWLLtf/xIpJa05KKz/1V7Y/Ohx2bcfXsAl1xzyPr84xhz1W601CTWvuKOrXZ1ePv5L18XR8c1Ko1/3wmxGRoNjFpkGDBowbN46srCwWLVrEs88+y4gRI4KP//GXiT8bH9enTx969ep1yMdv374dv99f3HhlzhhDUlISW7durTCj8CR8ab0Vn/vZx7irvwvc8PvZ/ex/SFu6GGfgDZiYqt6GiwBac1IW7OaNFDw6HNLToEFj7G2j2J7vwpYthY7TepNQ05orGtu9J8yZQe6yxWxeOB/TvI3XkYJ8Pl+RNzyKXWx8Pl+w9TZv3pyffvqJWbNm0bt3bwDS0tKoWbNm8Pj09PRDdnEOFh0dTXR09GEfC6cFaK0NqzxSsWm9FY3dvRN36gQATP/BUFCAnTYR+/WnFGz6GeeGf2Pq1fc2ZITQmpOSsr9tCFynJmMPNGqGc9tIqJFw1PWk9SahpjX3J2rXw5x6NvbLuRR8+C5RNz/gdaISKfV1bKy15OfnU69ePRITE1mx4sBEBb/fz5o1a2jdunVpP42ISCHWWty3nofsvdCsFeacXjgXXIZz+0NQIwF++wV31G3Y5Yu9jipSYdlffwxcpyZjDzRtgXPHKEyNI/8xU0TCl+nZF4wDq77F/vKD13FKpFjF5u233+b7779n27ZtbNy4kXfeeYfVq1dzxhlnYIyhZ8+epKSksHjxYjZu3Mizzz5LTEwM3bp1K6/8IlJZffslLF8MUT6cq2/COFEAmNYn4Nz3BDRvA9lZuM+Mwk2ZhHULvM0rUsHYn9biPnYfZGXAca1xbhuJqVbD61giUkKmXgNM1+5A5E5IK9apaHv27OGZZ55h9+7dxMXF0bRpU4YPH06HDh0A6N27N3l5ebzyyitkZWXRokULhg8fHpxyJiJSFmxWBu7bLwJgLuqLaVj4on+mZm2cO0Zjp07AzvsQO2sKdsN6nCF36K/JImXArl+N+9RIyM2Glu1w/nU/pmqc17FEpJRMz37YRQtg+WLspg2Yxs28jlQsxobpCYfbt28vNAbaK8YY6tevz5YtW3RuppQ7rbeicSc8if1yHtRvjHPfE5gjvE4PwF30GXbiM5CXC7Xq4Pzz/zDNWoUwbXjTmpPist8vx31mVODfVJsOODfeW+RBHVpvEmpac8XnvjQO+78voPPpRP3z/7yOQ3R0dJGHB5T6NTYiIqFk1ywLlBpjcK668ailBsDp2h3nnsfgmIawawfuw/+Hu2CW/gcnUgJ21VLcpx8KlJrjO+HcdJ+mD4pUMObi5MA7336FTd3obZhiUrERkYhhc3NwJz0LgDmrJ6ZF2yJ9nGnYBGf4Y3DSaVDgx771Ava1J7C5ueWYVqRiscv/h/vsKMjPg46n4AwbjqkS43UsESljpmFTOOl0qBKD/W2D13GKRcVGRCKG/eBt2PE71KqDuezKYn2siY0LnIbW9xowDvab+bj/uRO7bXP5hBWpQOzSr3CfHwN+P5x0Os4/78ZEV/E6loiUEyd5EM5/XsHZN0wgUqjYiEhEsBt+wP73AwCcgUNL9EJlY8xhRkLfjl22qKzjilQY7uLPcV98BAoKMKecifOPOzG+o58CKiKRzdSuF5HDdlRsRCTsWb8fd+LTYF3MKd0xJ5xcquczrU/Auf+JAyOhnx2tkdAih+F+NQ/7yuPgupjTzsEMvhUTFeV1LBGRw1KxEZGwZz+ZDr/9AtVrYK64rkye0yQGRkKbcy8JfI5ZU3CfeBCbsadMnl8k0rlfzMFOeCrwB4Uzzsdc86/g9aJERMKRio2IhDW79TfsvguFmf7XlenWuPFF41wxBHPd7VAlBr5fjvvQrdif15XZ5xCJRO78mYEx6dZizr4YM3AoxtGvDCIS3vRTSkTClnVd3InPgD8fju+E6XpWuXyeQiOhd+/AfeTfGgktlZY7533s/gvgnn8p5m//UKkRkYign1QiErbs55/AD2sgpirOlcMwxpTb59JIaBFwZ03BTnkNCFyB3PS9tlz/3YmIlCUVGxEJS3bXDuy0CQCYPldiatcr9895YCT0teBoJLRUHtZa3A/exqZMAsD0/jtOnytVakQkoqjYiEjYsdbivv0C5GRDs1aYs3uG7HMHRkL3wbltlEZCS6VgrcWmTMR++C4A5rKrcXpd4XEqEZHiU7ERkbBjl3wJyxdDlA/nam8mMZnW7Q8dCT19okZCS4VircVOfg378TQATP/BOBdd7nEqEZGSUbERkbBiszKw7+x74XLPvpiGTTzLEhgJPebASOiPp2oktFQY1nWxb7+InTsDADPgnzjn9fY4lYhIyanYiEhYsZNfg4w9UL8x5qJ+XsfB+HyBkdBD7oCYqhoJLRWCdQuwbz6HXTALjMFcdSPOWaE75VNEpDyo2IhI2LBrvsN+NQ+Mwbn6Jkx0tNeRgpxTzsT596OQdNBI6PkaCS2RxxYUYF9/CvvFHDAO5tpbcM443+tYIiKlpmIjImHB5ubgTnoOAHNWT0zzNt4GOgzTsEngejf7R0K//QL2tfEaCS0Rw/r92Fcfx34zHxwHM+R2nNPO9jqWiEiZULERkbBgZ7wFO36HWnUwl13pdZwjOnQk9ALcsXdoJLSEPevPx33pEez/vggM5rj+bpwuZ3gdS0SkzKjYiIjn7IYfsHM/BMAZOAxTNc7jREdXaCR0fCKk/qqR0BLWbH4e7nNj4btvwBeNM/TfmJNO8zqWiEiZUrEREU9Zvx/3jafAuphTumNO6Ox1pCIzrdvj3DceWrQtPBK6QCOhJXzY3FzcZ0bDyiUQXQXnxnsxHbp4HUtEpMyp2IiIp+wn0yH1V6heA3PFdV7HKTaTWBvn9tF/GAn9ADY9zdtgIoDNycZ9eiSs+Q5iquLc/ADm+E5exxIRKRcqNiLiGbvlN+xH+6523n8IpkaCx4lK5pCR0GtX4I66TSOhxVM2ey/ukw/CupVQNRbnlgcxrU/wOpaISLlRsRERT1jXxZ34DPj90L4zpmt3ryOVmkZCS7iwWZm44++HH7+HuGo4tz2EadHO61giIuVKxUZEPGE/nw0/rgmcHjPwBowxXkcqEwdGQp+ukdDiCZuZjvv4vbBhPVSrgXPbKEyzVl7HEhEpdyo2IhJydtcO7LQ3ADB9rsTUrudxorIVGAl9N6bfH0ZC/66R0FK+bHoa7qPDYePPUCMB547RmKbNvY4lIhISKjYiElLWWty3X4CcbDiuNebsnl5HKhfGGJzz/zASevRt2GXfeB1NKiibtitQalJ/hYRaOHeOwTQ61utYIiIho2IjIiFll3wJyxcHLhB41U0YJ8rrSOWq8EjovbjPjsGd/oZGQkuZsrt24I67B7Zsgpp1AqWmfmOvY4mIhJSKjYiEjM1Mx77zIgCmZ19MwyYeJwqN4Ejo8/4KgP14mkZCS5mxO37HHfdv2LYZatcLlJpjGngdS0Qk5FRsRCRk7OTXIGMP1G+Muaif13FCyvh8OP2vw/zjzgMjoR+6FfvTWq+jSQSz2zYHSs2O36FuEs6dYzF1k7yOJSLiCRUbEQkJu+Y77NefgjE4V9+EiY72OpInnC5n4NyzbyR02k7ccffgzp+pkdBSbHbLb4HTz3btgKSGOHeNxdSu63UsERHPqNiISLmzuTm4E58FwJx9MaZ5G48Tecs0+ONI6Bf3jYTO8TqaRAib+ivuo/dA2i5o2DRw+lliba9jiYh4SsVGRMqdff8t2LkNatXF9BnodZywcPiR0HdqJLT8Kbvx50CpSU+Dxs0Cr9+Kr+l1LBERz6nYiEi5shvWY+d9CIAzcCimapzHicJHcCT07X8YCf2dRkLL4dkNP+A+di9kZkDTFji3j8LUiPc6lohIWFCxEZFyY/35uG88DdbFdO2OOaGz15HCkmn1h5HQz43BnaaR0FKY/fF73PH3wd5MaN4G57aHMNVqeB1LRCRsqNiISLmxn6QELhZYPR7Tf4jXccLaISOhZ2sktBxg16/CfeIByN4LrY7HueVBTFw1r2OJiIQVFRsRKRd2y2/Yj94FwPS/TqfLFIFGQsvh2DXLcJ98EHJzoG1HnH89qFM6RUQOQ8VGRMqcdV3cic+A3w/tO2O6dvc6UkQ5MBK6kUZCV3J25be4Tz8EeXnQvjPOTfdhYmK8jiUiEpZUbESkzNnPZ8OPayCmKs7AGzDGeB0p4pgGTXCGPwqdDxoJ/erjGgldidhl3+A+Nxr8+XBiV5yh92Ciq3gdS0QkbKnYiEiZsrt2YKe9AYDpcxWmdj2PE0UuUzUO5/q7Mf0GBUZCL/pMI6ErCbtkIe4LD4Pfj+n8l8A6qKQXtRURKSoVGxEpM9Za3Leeh5xsaN4Gc/ZFXkeKeIGR0JdqJHQl4i76DPelR6GgIDBNcMgdGJ/P61giImFPxUZEyoxdshBW/A+ifDhX3ohxoryOVGEcGAndTiOhKzD3y7nYVx8PjEg//VzMoFswUfp3JCJSFCo2IlImbGY69p2XADA9+2EaNvE4UcUTGAk9CnNeb2DfSOjx92skdAXhfjYbO+EpsBZz5oWYq2/SHwdERIpBxUZEyoSd/Bpk7IEGTTA9+3odp8IKjIQejPnHXYGR0OtWaiR0BeDO+xD75nMAmHMvwQy8AePof9EiIsWhn5oiUmp29XfYrz8FY3CuuhHj04ucy5vTpduhI6E//UgjoSOQ+8l07LsvA2Au6BO47pMmCYqIFJuKjYiUis3Jxp30LADmnF6Y5m08TlR5HDIS+p2XNBI6wrgfvYedOgEA06s/5vJrVGpEREpIxUZESsXOeBt2boNadTGXDvQ6TqVzxJHQW1O9jiZHYa3Fff9N7Iy3ADC9B+D0HqBSIyJSCio2IlJidsN67LwPAXCuHIqpGutxosqp0EjohJqBkdBjbscu/drraHIY1lrstAnYmZMBMH2vwenV3+NUIiKRT8VGRErE+vNx33g6MJb21LMw7Tt7HanSM63a49x70Ejo58dqJHSYsdZi33sF+0kKAOaKITgXXOZxKhGRikHFRkRKxM6eDqm/QvV4TPJ1XseRfUxiLY2EDlPWdbFvPh/c5TQDh+Kce4nHqUREKg4VGxEpNrtlE3bme0DgL86mRrzHieRgGgkdfqxbgJ34NPbz2WAM5pp/4XS/0OtYIiIVioqNiBSLdV3cic+A3w/tO2NOOdPrSHIETpduOMMf00hoj9mCAuxrT2C/nAfGwQy6Fecv53kdS0SkwlGxEZFisZ/Nhh+/h5hYnIFDNcUpzJn6jXGGP4rp/JcDI6Ff0UjoULF+P/blR7GLPoOoKJx/3IFz6llexxIRqZBUbESkyOyu7djpbwBgLrsSU7uux4mkKEzVOMz1dx0YCb1YI6FDwebn4774MPbbLyHKh/PPuzEnd/M6lohIhaViIyJFYq3FfesFyMmG5m0wZ13kdSQphiONhHY1Erpc2Lxc3OfGwLJF4IvGGTYcc+KpXscSEanQfF4HEJHIYP/3Baz4H/h8OFfdiHGivI4kJbB/JLT74iPw4xrc58aw7cu5FFSrESg8CTUxCTUhoda+27UwMTFex44oNjcX99lR8P1yqFIFZ9i9mHYneh1LRKTCU7ERkT9lM9Ox774MgOmZjGnQxONEUhr7R0LbaW9g584gd/niQo8fMlogNu5AyYlPDJSexP0l6EABIq5apX/Nlc3Zi/v0Q7B+NcRUxbnpfkzr9l7HEhGpFFRsRORP2cmvQsYeaNAEc9HlXseRMmB8Pkz/wXDaWSRkpJG2cQM2bRd2zy7Ys3vf2y7Iy4PsvYG3ramHlJ5Ct33RwV2fwqWnJiZx3/vxNSE+oULu+Nm9WbhPjYCf1kJsHM6/HsC0aOt1LBGRSkPFRkSOyq5aiv16PhgTOAXNF+11JClDpmkLqtWvT/qWLYeMgbbWBl5Tta/s2LTCpcemp8H++/Zmgj8fdm4LvFG49BR6ZuNAfMKBXaBgGaqFSUg86DS4mpjoKuX8HSgbNisT94kH4JcfIK4azi0jMc1aeh1LRKRSUbERkSOyOdm4bz4HgDmnF6Z5G48TSSgZYwKnocXGQVIjjnaSmc3PK1x69uyGtN2Qvjvw/v6doPQ9YN0Dx/LzkQsQQFz1QMlJ3FeA4mseuguUUAuqxnp2GpzNSMcdfx9s2gDVa+Dc+hCmyXGeZBERqcxUbETkiOyMtwJ/fa9dD3PpQK/jSBgz0VWgzjGBNzhiCbIFBYHTGg8uQPveDjkNzu8P7ATtzYQtm45+GlyVmCOcBrevECXuK0DVamCcshsIatN34z52H2zeCDUScG4fhWnYtMyeX0REik7FRkQOy/68DjvvQwCcgTdgqsZ6nEgqAhMVBYm1Am80P3IBsjZQaNL2n/a2r/Ck/bEQ7QqcLpeXC9u3Bt44ymlwUVFQI7HwLlChU+JqQUIixNfE+I7+v0i7eyfu4/fC1lRICAxkMPUblfh7IyIipaNiIyKHsP583InPgLWYU8/CtO/sdSSpZIwxUK1G4K1hk6OfBpebs+9Ut7SDSs8uSPvDaXCZ6VBQAGk7A2+/HqUAAVSPP3TXJ37f7bhquG89HyhSteoESk29BmX+fRARkaJTsRGRQ9jZ0yD1V6gej0m+zus4IkdlYqpCvQaBN45yGpzfD+lpfzgNbt9ghINOiSN9d6AAZaYH3lJ/PfJpcHWOCZSafafgiYiId1RsRKQQu2UTduZkAMwVQzA14j1OJFI2jM8HteoE3jhKAXJdyMo4/K7PnoNu1zkG55p/YWrVDd0XISIiR6RiIyJB1nUDp6D5/XDCyZhTzvQ6kkjIGceBGgmBt0bNjnoanIiIhI+yGw0jIhHPfjYbfvweYmJxBtxQ6a8iLyIiIpGjWDs2KSkpLF68mNTUVKpUqUKrVq0YOHAgDRoceMGktZYpU6Ywb948MjMzadmyJYMHD6Zx48ZlHl5Eyo7dtR077Q0AzGVXYmrr9BoRERGJHMXasVmzZg0XXHABo0eP5t5778V1XUaNGkVOTk7wmBkzZjBz5kwGDRrE2LFjSUxMZNSoUWRnZ5d5eBEpG9Za3Defh9xsaN4Gc1ZPryOJiIiIFEuxis3w4cM566yzaNy4McceeyxDhw5lx44d/Pzzz0Dgl6NZs2bRp08funbtSpMmTRg2bBi5ubksXLiwXL4AESk9+78vYOUS8PlwrrqxTC9gKCIiIhIKpRoesHfvXgCqV68OwLZt20hLS6Njx47BY6Kjo2nXrh3r1q2jR48ehzxHfn4++fn5wdvGGGJjY4Pve21/hnDIIhWfF+vNZqZj330ZAOfiZBxdNb1S0c84CSWtNwk1rbnKpcTFxlrLG2+8QZs2bWjSpAkAaWlpACQkJBQ6NiEhgR07dhz2eVJSUpg6dWrwdrNmzXj44YepWze8zu9PSkryOoJUIqFcbzsff4G9GXvwNT2OpGtvwkRHh+xzS/jQzzgJJa03CTWtucqhxMXm1VdfZePGjYwcOfKQx/7Yiq095HrOQX369KFXr16HfOz27dvx+/0ljVdmjDEkJSWxdevWo34dImUh1OvNXbUUd95MMAb79xvYeoQ/QEjFpZ9xEkpabxJqWnORz+fzFXnDo0TF5rXXXuPbb79lxIgR1K5dO3h/YmIiENi5qVmzZvD+9PT0Q3Zx9ouOjib6CH8hDqcFaK0NqzxSsYVivdmcbNxJzwJgzukFx7XWGq/E9DNOQknrTUJNa65yKNYrhK21vPrqqyxatIj777+fevXqFXq8Xr16JCYmsmLFiuB9fr+fNWvW0Lp167JJLCJlws54C3Zug9r1MJcO9DqOiIiISKkUa8fm1VdfZeHChdx1113ExsYGX1MTFxdHlSpVMMbQs2dPUlJSqF+/PklJSaSkpBATE0O3bt3KI7+IlID9eR123ocAOAOHYqrGepxIREREpHSKVWzmzJkDwIMPPljo/qFDh3LWWWcB0Lt3b/Ly8njllVfIysqiRYsWDB8+PDjpTES8Zf35uBOfAWsxp56NaX+S15FERERESq1YxWby5Ml/eowxhuTkZJKTk0scSkTKj509DVJ/hRoJmP6DvY4jIiIiUiZ0FT6RSsRu2YSdGfgDhel/HaZ6vMeJRERERMqGio1IJWFdF/eNp8HvhxNOxpxypteRRERERMqMio1IJWE/+xh+WgsxsTgDbtBVmEVERKRCUbERqQTszu3YaRMBMJdfhaldtAtdiYiIiEQKFRuRCs5ai/vW85CbDc3bYLpf5HUkERERkTKnYiNSwdnFn8PKJeDz4Vx9E8bRP3sRERGpePQbjkgFZjPSse++DIC5OBlTv7HHiURERETKh4qNSAVmJ78KmenQsCnmwsu9jiMiIiJSblRsRCoou+pb7DfzwRicq27E+KK9jiQiIiJSblRsRCogm5ON++bzAJhzL8Ec19rjRCIiIiLlS8VGpAKy778JO7dB7XqY3gO8jiMiIiJS7lRsRCoY+9Na7KcfAeBcOQxTNdbjRCIiIiLlT8VGpAKx/nzcic+AtZjTzsYc38nrSCIiIiIhoWIjUoHYj6fB5o1QIwGTPNjrOCIiIiIho2IjUkHYzRuxMycDYK4Ygqke73EiERERkdBRsRGpAKzrBk5BK/BDhy6YLmd4HUlEREQkpFRsRCoAu2AW/LQWqsbiDPgnxhivI4mIiIiElIqNSISzO7djp08CwFx2NaZWXY8TiYiIiISeio1IBLPW4r71PORmQ4u2mO4Xeh1JRERExBMqNiIRzC7+HFYuAZ8P56qbMI7+SYuIiEjlpN+CRCKUzUjHvvsyAObi/pj6jTxOJCIiIuIdFRuRCGUnvwKZ6dCwKebCy7yOIyIiIuIpFRuRCGRXfYv9ZgEYg3P1TRhftNeRRERERDylYiMSYWxONu6k5wAw516CadbK40QiIiIi3lOxEYkw9v03Ydd2qF0Pc+lAr+OIiIiIhAUVG5EIYn9ai/30IwCcK4dhYqp6nEhEREQkPKjYiEQI68/HnfgMWIs57WzM8Z28jiQiIiISNlRsRCKE/XgabN4INRIwyYO9jiMiIiISVlRsRCKA3bwRO3MyAOZv/8BUj/c4kYiIiEh4UbERCXPWLQicglbghw5dMCd38zqSiIiISNhRsREJc3bBx/DTWqgaizPgBowxXkcSERERCTsqNiJhzO7cjp0+CQBz2dWYWnU8TiQiIiISnlRsRMKUtRb3rechNxtatMN0v9DrSCIiIiJhS8VGJEzZxZ/DyiXg8+FcdSPG0T9XERERkSPRb0oiYchm7MG++zIA5uL+mPqNPE4kIiIiEt5UbETCkPveK5CZDg2bYi68zOs4IiIiImFPxUYkzGQv+Qr7zQIwDs7VN2F80V5HEhEREQl7KjYiYcTm7GX3M2MAMOdegmnWyuNEIiIiIpHB53UAEQmw2XuxbzyN3b4V6tTDXDrA60giIiIiEUPFRiQM2LUrcCc8BTu3gePgXHUTJqaq17FEREREIoaKjYiHbG4uNmUidt6HgTvqHEPdO0ayu04DrLXehhMRERGJICo2Ih6xP63Fff1J+D0VAHPmhTjJ11K1WXPYssXjdCIiIiKRRcVGJMRsfj72w3ews6eDdSGxdmD6WfuTMMZ4HU9EREQkIqnYiISQ3fgz7mvjIfVXAMypZ2OuGIKpVt3jZCIiIiKRTcVGJARsQQH246nYj96FggKokYAz8AbMSad7HU1ERESkQlCxESlndstvgV2aX34I3HHSaTgDbsDEJ3qaS0RERKQiUbERKSfWdbHzPsSmTIL8PIirhvnb9Ziu3fVaGhEREZEypmIjUg7s9q24E56E9asDd7Q/KXBtmpq1vQ0mIiIiUkGp2IiUIWst9vNPsFNeg9wciKmKSR6EOeMC7dKIiIiIlCMVG5EyYnftwJ34NKz+LnBHq+NxrrkZUzfJ22AiIiIilYCKjUgpWWux3yzAvvMSZGdBdBXMZVdizrkE4zhexxMRERGpFFRsRErBpqfhvvkcfPdN4I5mrXCuvQVTv5G3wUREREQqGRUbkRKyS7/CnfQcZKZDlA9zyRWYCy/HREV5HU1ERESk0lGxESkmm5WJfedF7KLPAnc0OhZn0K2Yxs28DSYiIiJSianYiBSDXfUt7htPQ9ouMA7mossxva7AREd7HU1ERESkUlOxESkCm7MXO+V17OefBO44piHOoFswx7X2NpiIiIiIACo2In/KrluF+/oTsHMbAObcSzB9rsLExHgbTERERESCVGxEjsDm5WJTJmHnfhC4o3Y9nGtvxrQ+wdtgIiIiInIIFRuRw7Ab1uO+Nh62pgJgzjgfkzwIUzXO42QiIiIicjgqNiIHsf587IfvYT+eCtaFhFo4V9+IOeFkr6OJiIiIyFGo2IjsYzdtwH3tCfhtAwDmlO6Yv/8DU62Gt8FERERE5E+p2EilZwsKsLOnYT98Fwr8UD0eZ+ANmM5/8TqaiIiIiBSRio1Uanbrb4Fdmg3rA3ec2BXnyqGY+Jqe5hIRERGR4lGxkUrJui7204+w0ydCfh7EVsP87R+YU8/CGON1PBEREREpJhUbqXTs9q24E56C9asCd7TrhHP1TZhadbwNJiIiIiIlVuxis2bNGj744AM2bNjA7t27ueOOOzjllFOCj1trmTJlCvPmzSMzM5OWLVsyePBgGjduXKbBRYrLWov9Yg528muQmw0xVTF9r8V0v1C7NCIiIiIRzinuB+Tm5nLssccyaNCgwz4+Y8YMZs6cyaBBgxg7diyJiYmMGjWK7OzsUocVKSmbthP3qZHYSc8GSk2Ldjj3P4lz1kUqNSIiIiIVQLF3bDp16kSnTp0O+5i1llmzZtGnTx+6du0KwLBhwxgyZAgLFy6kR48epUsrUkzWWuziz7Fvvwh7M8EXjelzJea8SzBOlNfxRERERKSMlOlrbLZt20ZaWhodO3YM3hcdHU27du1Yt26dio2ElM3Yg/vm87D0q8AdTVvgDL4VU1+nRYqIiIhUNGVabNLS0gBISEgodH9CQgI7duw47Mfk5+eTn58fvG2MITY2Nvi+1/ZnCIcsUnTud1/jTnwWMvZAVBROryswF/XF+MJ7XobWm4Sa1pyEktabhJrWXOVSLr/l/XHxWGuPeGxKSgpTp04N3m7WrBkPP/wwdevWLY9oJZaUlOR1BCkCNzOD3S+OY++nswCIbtqcWrePoErzNh4nKx6tNwk1rTkJJa03CTWtucqhTItNYmIiENi5qVnzwAUO09PTD9nF2a9Pnz706tUreHt/Kdq+fTt+v78s45WIMYakpCS2bt161IIm3nNXLw2Mcd69E4yDufAy3L/+nZ3R0bBli9fxikTrTUJNa05CSetNQk1rLvL5fL4ib3iUabGpV68eiYmJrFixgmbNmgHg9/tZs2YNAwYMOOzHREdHEx0dfdjHwmkBWmvDKo8cYHOysVNfx342O3BHvQY4g27B7NulicT/blpvEmpacxJKWm8SalpzlUOxi01OTg5bt24N3t62bRu//PIL1atXp06dOvTs2ZOUlBTq169PUlISKSkpxMTE0K1btzINLgJg16/GnfAkbA+sSXNOL8xlV2FiqnqcTERERERCqdjF5qeffmLEiBHB2xMnTgSge/fuDBs2jN69e5OXl8crr7xCVlYWLVq0YPjw4cGBACJlweblYme8hf3vDLAWatXFueZfmLYd//yDRURERKTCKXaxOf7445k8efIRHzfGkJycTHJycqmCiRyJ3fAD7utPwJZNAJhuPTDJgzGxcd4GExERERHPhPfsW5GDWH8+duZk7Kwp4LqQUBPnyhsxHbt4HU1EREREPKZiIxHB/vYL7mvjYdMGAEyXMzB/vx5TPd7jZCIiIiISDlRsJKxZtwD7SQp2xttQ4IfqNTB/vwGni4ZRiIiIiMgBKjYStuzW1MBraX5eF7ij4yk4Vw7DJNQ86seJiIiISOWjYiNhx7oudv4s7PQJkJcHsXGY/kMwp58TvICriIiIiMjBVGwkrNid23BffxLWrQzc0bYjztX/wtQu2hVnRURERKRyUrGRsGCtxS78L3byq5CTDVViMH2vxXS/EOM4XscTERERkTCnYiOes2m7cCc+AyuXBO5o0Rbn2psx9Rp4G0xEREREIoaKjXjGWov93xfYt16AvZng82EuHYjp0RvjRHkdT0REREQiiIqNeMJmpGPfeh777ZeBO5o0xxl0K6ZhE2+DiYiIiEhEUrGRkLPLFgVOPcvYA1FRmJ7JmJ79MD4tRxEREREpGf0mKSFj92Zh33sF+9W8wB31G+MMvhXTtIW3wUREREQk4qnYSEjYNctwJzwFu3eAMZjzL8X0HoCJruJ1NBERERGpAFRspFzZ3Bzs1AnYBbMCd9RNwhl0C6ZFO2+DiYiIiEiFomIj5cb+uAb3tSdg+1YAzNk9MZdfg4mp6m0wEREREalwVGykTFl/PvywBrvkS+wXn4C1UKsOztX/wrQ70et4IiIiIlJBqdhIqdm0XdiVS7Arl8Ca5ZCbHXzMnH4upv91mLhqHiYUERERkYpOxUaKzboFsOGHA2Vm48+FD4hPxJzQGXNKd+3SiIiIiEhIqNhIkdisDOzq72DlEuyqpZCZfuBBY+DYlpgTTsac0BmaNMc4jndhRURERKTSUbGRw7LWQuov2JXfYlcsgZ/WgnUPHBBbDXN8JzjhZEz7kzDxiZ5lFRERERFRsZEgm5sD3y8PlJlVS2DXjsIHNGgS2JXpcDIc1wbj0/IRERERkfCg30wrObttS+C1MiuWwPqV4PcfeLBKFWjdAdPh5EChqV3Pu6AiIiIiIkehYlPJBMcxr9j3wv/fUwsfULveviLTBVq3x1SJ8SaoiIiIiEgxqNhUAjZtZ+D0ssOMYyYqClq0O3CKWVIjjDHehRURERERKQEVmwqoyOOYTzgZ2p6oa8yIiIiISMRTsakgbFZGYAzzqm81jllEREREKh0VmwgVHMe8Ygl25bcaxywiIiIilZqKTQQ5MI55X5nZrXHMIiIiIiKgYhP27LbNBy6SebhxzG06Bl8vo3HMIiIiIlJZqdiEGevPh/WrD0wx++M45jrH7HutzMkaxywiIiIiso+KTRgo0jjmfRfJ1DhmEREREZFDqdh4IDiOecUS7KqjjWPuAm07ahyziIiIiMifULEJkeA45pVLsKuXQmbGgQcPHsfc4WRofJzGMYuIiIiIFIOKTTkpPI55Cfy0TuOYRURERETKiYpNGbI52bB2xZHHMTdsimnfObAr07wtJirKm6AiIiIiIhWMik0pFW0c88mB18xoHLOIiIiISLlQsSmmA+OY9+3KaByziIiIiIjnVGyKoGDndtzPP8FdsQS+1zhmEREREZFwo2JzFHbZNxR88C6bN2kcs4iIiIhIOFOx+TObfg6MY27W6sAL/zWOWUREREQkrKjYHE2bjjiDbiXp3IvYlp0bGOEsIiIiIiJhR9sOR2GqxuKcfg5RibW8jiIiIiIiIkehYiMiIiIiIhFPxUZERERERCKeio2IiIiIiEQ8FRsREREREYl4KjYiIiIiIhLxVGxERERERCTiqdiIiIiIiEjEU7EREREREZGIp2IjIiIiIiIRT8VGREREREQinoqNiIiIiIhEPBUbERERERGJeCo2IiIiIiIS8VRsREREREQk4vm8DnAkPl94RQu3PFKxab1JqGnNSShpvUmoac1FruL8tzPWWluOWURERERERMqdTkX7E9nZ2dx9991kZ2d7HUUqAa03CTWtOQklrTcJNa25ykXF5k9Ya9mwYQPa2JJQ0HqTUNOak1DSepNQ05qrXFRsREREREQk4qnYiIiIiIhIxFOx+RPR0dH07duX6Ohor6NIJaD1JqGmNSehpPUmoaY1V7loKpqIiIiIiEQ87diIiIiIiEjEU7EREREREZGIp2IjIiIiIiIRT8VGREREREQins/rAKGwZs0aPvjgAzZs2MDu3bu54447OOWUU4KPp6Wl8dZbb7FixQqysrJo27YtgwYNon79+gBkZmYyefJkli9fzs6dO6lRowZdunThiiuuIC4uLvg8mZmZvP766yxZsgSAk08+mUGDBlGtWrXQfsHiqdKut4NZaxk7dizLli075Hm03mS/slpz69ev55133uHHH38kKiqKY489lnvuuYcqVaoAWnMSUBbrLS0tjUmTJrFixQpycnJo0KABffr04dRTTw0eo/UmACkpKSxevJjU1FSqVKlCq1atGDhwIA0aNAgeY61lypQpzJs3j8zMTFq2bMngwYNp3Lhx8Jj8/HwmTZrEl19+SV5eHu3bt+e6666jdu3awWO05iJfpdixyc3N5dhjj2XQoEGHPGatZdy4cWzbto0777yTRx55hLp16/LQQw+Rk5MDwK5du9i1axdXXnkljz76KMOGDWP58uU8//zzhZ7rqaee4pdffmH48OEMHz6cX375haeffjokX6OEj9Kut4PNnDkTY8xhP4/Wm+xXFmtu/fr1jB49mo4dOzJmzBjGjh3LhRdeWGj9ac0JlM16e/rpp9m8eTN33303jz76KKeccgrjx49nw4YNwWO03gQCRfqCCy5g9OjR3Hvvvbiuy6hRowqtpxkzZjBz5kwGDRrE2LFjSUxMZNSoUWRnZwePmTBhAosXL+bmm29m5MiR5OTk8J///AfXdYPHaM1VALaS6devn120aFHwdmpqqu3Xr5/duHFj8L6CggJ77bXX2rlz5x7xeb766iv7t7/9zfr9fmuttZs2bbL9+vWz69evDx6zbt06269fP5uamloOX4lEgtKstw0bNth//vOfdvfu3Yc8j9abHElJ19w999xj33nnnSM+r9acHE5J19vAgQPtZ599Vui5rr32Wjtv3jxrrdabHNmePXtsv3797OrVq6211rqua4cMGWJTUlKCx+Tl5dmrr77azpkzx1prbVZWlr3iiivsl19+GTxm586dNjk52X733XfWWq25iqJS7Ngcjd/vByh04SbHcfD5fKxdu/aIH7d3715iY2OJiooCAn/tjIuLo2XLlsFjWrVqRVxcHOvWrSun9BJpirrecnNzefLJJxk0aBCJiYmHPI/WmxRVUdbcnj17+OGHH0hISODee+9lyJAhPPDAA4XWpNacFEVRf8a1adOGr776iszMTFzX5csvvyQ/P5927doBWm9yZHv37gWgevXqAGzbto20tDQ6duwYPCY6Opp27doF18rPP/9MQUEBHTp0CB5Tq1YtmjRpwvr16wGtuYqi0hebBg0aULduXd5++20yMzPx+/28//77pKWlkZaWdtiPycjIYNq0afTo0SN4X1paGgkJCYccm5CQcMTnkcqnqOvtjTfeoHXr1nTp0uWwz6P1JkVVlDX3+++/AzBlyhTOPfdc7rnnHpo1a8bIkSPZsmULoDUnRVPUn3G33norBQUFDBo0iAEDBvDSSy9x5513kpSUBGi9yeFZa3njjTdo06YNTZo0AQiuhz+ul4SEBPbs2RM8xufzBcvQwcfs/3ituYqh0hcbn8/H7bffzpYtWxg0aBADBw5k9erVdOrUCcc59Nuzd+9e/vOf/9CoUSP69u37p89vrT3iaySk8inKeluyZAmrVq3immuuKfbza73JHxVlzVlrATjvvPM4++yzadasGddccw0NGjRg/vz5R31+rTk5WFH/n/ruu++SlZXFfffdx9ixY+nVqxePP/44GzduPOrza71Vbq+++iobN27k5ptvPuSxP66L/T/Xjqaox2jNRY5KMRXtzxx33HGMGzeOvXv34vf7iY+P55577uG4444rdFx2djZjxoyhatWq3HHHHfh8B759iYmJwb8MHCw9Pf2wfwGQyuvP1tuqVav4/fffDyk2jz32GG3btuXBBx/UepNi+bM1V7NmTQAaNWpU6OMaNmzIjh07AP2Mk6L7s/W2detWZs+ezWOPPRacWnXssceydu1aZs+ezT/+8Q+tNznEa6+9xrfffsuIESMKTTLbf7p2Wlpa8GcZFF4riYmJ+P1+MjMzC+3apKen07p16+AxWnORr9Lv2BwsLi6O+Ph4tmzZwk8//VToNKC9e/cyatQofD4fd911V3D86X6tWrVi7969/Pjjj8H7fvjhB/bu3Rv8RyNysCOtt0svvZRx48bxyCOPBN8Arr76aoYOHQpovUnJHGnN1a1bl5o1a7J58+ZCx2/ZsoU6deoAWnNSfEdab3l5ecChf2F3HCf4F3StN9nPWsurr77KokWLuP/++6lXr16hx+vVq0diYiIrVqwI3uf3+1mzZk1wrRx33HFERUUVOmb37t1s3LiRVq1aAVpzFUWl2LHJyclh69atwdvbtm3jl19+oXr16tSpU4evv/6a+Ph46tSpw8aNG5kwYQJdunQJvhAtOzub0aNHk5uby0033UR2dnZwhGB8fDyO49CoUSNOPPFEXnzxRYYMGQLASy+9xEknnVRo1rpUfKVdb4mJiYcdGFCnTp3gD3StNzlYadecMYa//vWvTJ48mWOPPZZjjz2WBQsWkJqaym233QZozckBpV1vDRo0ICkpiZdffpkrr7yS6tWr87///Y8VK1Zw9913A1pvcsCrr77KwoULueuuu4iNjQ2+3iUuLo4qVapgjKFnz56kpKRQv359kpKSSElJISYmhm7dugWPPeecc5g0aRI1atSgevXqTJo0iSZNmgQHCmjNVQzGFuUEwwi3evVqRowYccj93bt3Z9iwYcyaNYsPP/wwuI155pln0rdv3+CpZkf6eIBnnnkm+MtmZmZmcKsUoHPnzgwePFgXdqpkSrveDic5OfmwF+jUehMouzX3/vvv88knn5CZmUnTpk0ZOHAgbdq0CT6uNSdQNutty5YtvPXWW6xbt46cnBySkpK45JJLOPPMM4PHaL0JBP7/dzhDhw7lrLPOAg5coHPu3LlkZWXRokULBg8eHBwwAIGdwjfffJOFCxcWukDn/l1p0JqrCCpFsRERERERkYpNr7EREREREZGIp2IjIiIiIiIRT8VGREREREQinoqNiIiIiIhEPBUbERERERGJeCo2IiIiIiIS8VRsREREREQk4h35ioAiIiL7LFiwgOeeey54Ozo6mri4OBo1akSHDh0455xzSEhI8DDh0SUnJ9O3b98jXuxPREQin4qNiIgU2dChQ2nQoAEFBQXs2bOHtWvXMmPGDD788ENuueUWOnTo4HVEERGppHQqmoiIFFnjxo1p1aoVbdu25dRTT+Waa67h0UcfJSYmhscee4y0tDSvI4qISCWlHRsRESmVOnXqcNVVVzF+/Hjmzp1L3759Afjpp5+YOnUqa9euJS8vj4YNG3LppZdy+umnF/r4Xbt2MWXKFJYtW0ZaWhrx8fG0atWKwYMHk5iYSF5eHu+++y4rV65k27ZtOI5DgwYNuPTSS+nSpUuh59q7dy8TJ05k8eLF5Ofn06ZNG6699trD5t6yZQuTJ09m5cqV7N27l2OOOYYLLriACy+8sHy+USIiUq5UbEREpNQ6deqE4zh8//33AKxatYoxY8bQsmVLhgwZQlxcHF999RVPPPEEeXl5nHXWWUCg1Pz73//G7/fTp08fmjZtSkZGBsuXLycrK4vExET8fj+ZmZlccskl1KpVC7/fz8qVK3n00UcZOnQo3bt3B8Bay7hx41i/fj2XX345LVq0YO3atYwdO/aQvL/99hv33ntvsJQlJiaybNkyXn/9dTIyMujXr1/IvnciIlI2VGxERKTUqlatSo0aNdi1axcAr776Ko0bN+b+++8nKioKgBNPPJH09HTeeecdzjzzTBzH4b333iM9PZ1x48bRqFGj4PMdvKsTFxfH0KFDg7dd1+WEE04gKyuLWbNmBYvN8uXLWb16Nddccw09e/YEoEOHDvh8Pt59991Ced944w1iY2MZOXIkcXFxwWP9fj/vv/8+F110EdWrVy+H75SIiJQXFRsRESlTW7duJTU1lSuvvBKAgoKC4GMnnXQSS5cuZfPmzTRq1Ihly5bRvn37QqXmcL7++mtmzZrFL7/8Qm5ubvD+6Ojo4PurVq0C4Iwzzij0sd26dStUbPLy8li1ahU9evQgJiamUL5OnToxe/ZsfvjhBzp16lSCr15ERLyiYiMiIqWWk5NDRkYGTZo0CQ4QmDRpEpMmTTrs8RkZGQCkp6dTq1atoz73okWLGD9+PKeeeiqXXHIJiYmJREVFMWfOHObPnx88LjMzk6ioKGrUqFHo4xMTEwvdzszMpKCggNmzZzN79uyj5hMRkcihYiMiIqW2dOlSXNelXbt2xMfHA3DppZfStWvXwx7foEEDAOLj44Onrx3JF198Qb169bj11lsxxgTvz8/PL3Rc9erVKSgoICMjo1C5+eOktmrVquE4DmeeeSYXXHDBYT9nvXr1jppJRETCj4qNiIiUyo4dO5g0aRJxcXH06NGD+Ph46tevz6+//srf//73o37siSeeyOeff87mzZuDZedwfD5foVKTlpbGkiVLCh3Tvn17PvjgA7744ovga2wAFi5cWOi4mJgYjj/+eDZs2EDTpk3x+fS/QhGRikA/zUVEpMg2bdpEQUEBruuyZ88evv/+exYsWIDjONxxxx3B3ZohQ4YwduxYRo8eTffu3alVqxaZmZmkpqayYcMGbrvtNgD69+/PsmXLeOCBB+jTpw9NmjQhKyuLZcuW0atXLxo2bEjnzp1ZvHgxr7zyCqeeeio7duxg2rRp1KxZky1btgSzdejQgbZt2/LWW2+Rm5tL8+bNWbt2LV988cUhX8e1117Lfffdx/3338/5559P3bp1yc7OZuvWrXz77bc88MADofmGiohImTHWWut1CBERCW8LFizgueeeC972+XxUq1aNhg0b0rFjR84999xgqdnv119/Zfr06axZs4bMzExq1KhBo0aNOO200+jRo0fwuJ07dzJ58mS+++47MjIyiI+Pp02bNgwaNIiEhAQA3n//ff773/+SlpZGvXr16NWrFzt37mTq1KlMnjw5+Fx79+7ljTfeYPHixfj9flq3bs2gQYO45ZZb6Nu3L8nJycFjt23bxrRp01i+fDl79uyhWrVq1K9fn06dOnHZZZeV17dSRETKiYqNiIiIiIhEPMfrACIiIiIiIqWlYiMiIiIiIhFPxUZERERERCKeio2IiIiIiEQ8FRsREREREYl4KjYiIiIiIhLxVGxERERERCTiqdiIiIiIiEjEU7EREREREZGIp2IjIiIiIiIRT8VGREREREQinoqNiIiIiIhEvP8HjQ7TIoM/V6gAAAAASUVORK5CYII="
 class="
 "
 >
@@ -19497,7 +19580,7 @@ class="
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[51]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">imdb</span><span class="p">[</span><span class="n">imdb</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Decade&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1990</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Rating&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">imdb</span><span class="p">[</span><span class="n">imdb</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'Decade'</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1990</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'Rating'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 
      </div>
@@ -19511,7 +19594,9 @@ class="
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[51]:</div>
 
@@ -19535,7 +19620,7 @@ class="
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>*<strong>Note:</strong>* The command to extract the index of a DataFrame is <code>.index</code> - no parentheses! This is different than the way we extract columns, with <code>.get()</code>, because the index is not a column.</p>
+<p><strong><em>Note:</em></strong> The command to extract the index of a DataFrame is <code>.index</code> - no parentheses! This is different than the way we extract columns, with <code>.get()</code>, because the index is not a column.</p>
 
 </div>
 </div>
@@ -19559,7 +19644,7 @@ class="
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[52]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">imdb</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Decade&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">imdb</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'Decade'</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -19573,7 +19658,9 @@ class="
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+
+<div class="jp-OutputArea-child">
+
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[52]:</div>
 
@@ -19681,8 +19768,8 @@ class="
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
-<li>It turns out that this method <strong>does not</strong> yield the correct answer.</li>
-<li>When we use an aggregation method (e.g. <code>.max()</code>), aggregation is done to each column individually.</li>
+<li>It turns out that this method <strong>does not</strong> yield the correct answer. </li>
+<li>When we use an aggregation method (e.g. <code>.max()</code>), aggregation is done to each column individually. </li>
 <li>While it's true that the highest rated movie from the 1990s has a rating of 9.2, that movie is <strong>not</strong> Unforgiven – instead, Unforgiven is the movie that's the latest in the alphabet among all movies from the 1990s.</li>
 <li>Taking the <code>max</code> is not helpful here.</li>
 </ul>
@@ -19726,16 +19813,19 @@ class="
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <details>
     <summary>✅ Click <b>here</b> to see the answer.</summary>
+
 <pre>
 good_movies_per_year = imdb[imdb.get('Rating') > 8.5].groupby('Year').count()
 good_movies_per_year[good_movies_per_year.get('Votes') > 3].shape[0]    
 </pre>
-<p>As mentioned below, you can also use:</p>
+
+As mentioned below, you can also use:
+
 <pre>
 (good_movies_per_year.get('Votes') > 3).sum() 
 </pre>
-</details>
 
+</details>
 </div>
 </div>
 </div>
@@ -19747,7 +19837,7 @@ good_movies_per_year[good_movies_per_year.get('Votes') > 3].shape[0]
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h4 id="Aside:-Using-.sum()-on-a-boolean-array">Aside: Using <code>.sum()</code> on a boolean array<a class="anchor-link" href="#Aside:-Using-.sum()-on-a-boolean-array">&#182;</a></h4><ul>
-<li>Summing a boolean array gives a count of the number of <code>True</code> elements because Python treats <code>True</code> as 1 and <code>False</code> as 0.</li>
+<li>Summing a boolean array gives a count of the number of <code>True</code> elements because Python treats <code>True</code> as 1 and <code>False</code> as 0. </li>
 <li>Can you use that fact here?</li>
 </ul>
 
@@ -19806,6 +19896,7 @@ good_movies_per_year[good_movies_per_year.get('Votes') > 3].shape[0]
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <details>
     <summary>✅ Click <b>here</b> to see the answer.</summary>
+
 <pre>
 # A Series of Trues and Falses; True when there were at least 3 movies on the list from that year
 more_than_3_ix = imdb.groupby('Year').count().get('Votes') > 3
@@ -19813,8 +19904,8 @@ more_than_3_ix = imdb.groupby('Year').count().get('Votes') > 3
 # The year with the highest average rating, among the years with more than 3 movies
 imdb.groupby('Year').mean()[more_than_3_ix].sort_values(by='Rating').index[-1] 
 </pre>
-</details>
 
+</details>
 </div>
 </div>
 </div>
@@ -19855,6 +19946,7 @@ imdb.groupby('Year').mean()[more_than_3_ix].sort_values(by='Rating').index[-1]
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <details>
     <summary>✅ Click <b>here</b> to see the answer.</summary>
+
 <pre>
 (
     imdb.assign(title_length=imdb.index.str.len())
@@ -19863,9 +19955,10 @@ imdb.groupby('Year').mean()[more_than_3_ix].sort_values(by='Rating').index[-1]
     .index[-1]
 )
 </pre>
-<p>The year is 1964 – take a look at the movies from 1964 by querying!</p>
-</details>
 
+The year is 1964 – take a look at the movies from 1964 by querying!
+
+</details>
 </div>
 </div>
 </div>
@@ -19905,6 +19998,7 @@ imdb.groupby('Year').mean()[more_than_3_ix].sort_values(by='Rating').index[-1]
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <details>
     <summary>✅ Click <b>here</b> to see the answer.</summary>
+
 <pre>
 # A Series of Trues and Falses; True when there were at least 3 movies on the list from that year
 more_than_3_ix = imdb.groupby('Year').count().get('Votes') > 3
@@ -19922,8 +20016,8 @@ average_rating = total_rating / count
 # Doesn't account for the fact that different years have different numbers of movies on the list
 close_but_wrong = imdb.groupby('Year').mean()[more_than_3_ix].get('Rating').mean()
 </pre>
-</details>
 
+</details>
 </div>
 </div>
 </div>
@@ -19953,7 +20047,7 @@ close_but_wrong = imdb.groupby('Year').mean()[more_than_3_ix].get('Rating').mean
 </li>
 <li><code>df.groupby(column_name).agg_method()</code> <strong>aggregates</strong> all rows with the same value for <code>column_name</code> into a single row in the resulting DataFrame, using <code>agg_method()</code> to combine values.<ul>
 <li>Common aggregation methods include <code>.count()</code>, <code>.sum()</code>, <code>.mean()</code>, <code>.median()</code>, <code>.max()</code>, and <code>.min()</code>.</li>
-<li>*<strong>Tip:</strong>* look for keywords &quot;per,&quot; &quot;for each,&quot; and &quot;indexed by&quot; when solving problems.</li>
+<li><strong><em>Tip:</em></strong> look for keywords "per," "for each," and "indexed by" when solving problems.</li>
 </ul>
 </li>
 </ul>
