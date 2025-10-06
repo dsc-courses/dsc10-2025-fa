@@ -403,13 +403,13 @@ This class has one Midterm Exam and one Final Exam:
 - Midterm Exam: Wednesday, October 29th, **during your enrolled lecture slot**.
 - Final Exam: Saturday, December 6th from 3 to 6PM, location TBD.
 
-Exams are cumulative, though the Final Exam will emphasize material after the Midterm Exam. Both exams will be held **in-person and on-paper**. 
+Exams are cumulative, though the Final Exam will emphasize material after the Midterm Exam. Both exams will be held **in-person and on-paper**. You'll be allowed to use one 8.5 by 11 inch page of double-sided handwritten notes, but no calculators, computers, or other resources.
 
 If you have a conflict with either exam, you should let us know right away via the [Welcome Survey](https://docs.google.com/forms/d/e/1FAIpQLSfLvqLbgbPuOj6bb40k0e8JRs0epBA-BMA8I0HasTMjiz8elQ/viewform?usp=dialog) to see if accomodations can be made. Without express permission otherwise, students are required to take both exams at the scheduled times.
 
 ### Quizzes
 
-Quizzes are designed to help you get more practice solving problems on-paper without a computer in front of you, as you'll need to do on exams. Quiz questions are meant to be more straightforward than exam questions, but they will help you build the skills you need to perform well on exams, as well as help you identify any areas you need more practice in before the exam. 
+Quizzes are designed to help you get more practice solving problems on-paper without a computer in front of you, as you'll need to do on exams. Like exams, quizzes are in-person and on-paper. You'll be allowed to use one 8.5 by 11 inch page of double-sided handwritten notes, but no calculators, computers, or other resources. Quiz questions are meant to be more straightforward than exam questions, but they will help you build the skills you need to perform well on exams, as well as help you identify any areas you need more practice in before the exam. 
 
 There are five quizzes throughout the quarter, administered during your assigned quiz time on the following dates:
 
