@@ -25,7 +25,7 @@ conclusions about data. We will learn how to explore data and make predictions
 using data. Programming is a useful tool to help us analyze large datasets,
 and so we will learn how to program in Python towards this goal. We will learn
 some of the core techniques of data science, and we will practice applying them
-to real datasets from a variety of different disciplines. 
+to real datasets from a variety of different disciplines.  
 
 Prerequisites: None. This course is an introduction to data science with no
 prior background assumed beyond high school algebra. Make sure you are well-prepared by taking [this pretest](https://practice.dsc10.com/pretest/).
