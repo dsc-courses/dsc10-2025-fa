@@ -5,7 +5,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 plt.style.use('ggplot')
 # plt.rcParams['figure.figsize'] = (10, 5)
-plt.style.use('seaborn-v0_8-colorblind')
+plt.style.use('seaborn-colorblind')
 plt.rcParams.update({
     'figure.figsize': (10, 5),
     'axes.titlesize': 14,
