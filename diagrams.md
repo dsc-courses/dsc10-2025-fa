@@ -21,7 +21,7 @@ The interactive diagrams below are taken from lecture. Click on a diagram to "ac
 
 <center>
 
-<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQpW0NzwT3LjZsIIDAgtSMRM1cl41Gp_Lf8k9GT-gm5sGAIynw4rsgiEFbIybClD6QtxarKaVKLbR9U/embed?start=false&loop=false&delayms=3000&rm=minimal" frameborder="0" width="710" height="400" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="clip-path: inset(1.5px 5px 2.5px 5px);"></iframe>
+<iframe src="https://docs.google.com/presentation/d/1KiQWXpdcBL1LBb6IWHs1wgkraI_xtB_2_S0n5S0wx6c/embed?start=false&loop=false&delayms=3000&rm=minimal" frameborder="0" width="710" height="400" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="clip-path: inset(1.5px 5px 2.5px 5px);"></iframe>
 
 <br>
 
