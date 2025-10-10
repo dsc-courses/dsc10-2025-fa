@@ -95,7 +95,7 @@ style="clip-path: inset(15px 5.5px 25px 5px);">
 
 <center>
 
-<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vS_iYHJYXSVMMZ-YQVFwMEFR6EFN3FDSAvaMyUm-YJfLQgRMTHm3vI-wWJJ5999eFJq70nWp2hyItZg/embed?start=false&loop=false&delayms=3000&rm=minimal" frameborder="0" width="700" height="350" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="clip-path: inset(3.5px 5.5px 8px 5px);"></iframe>
+<iframe src="https://docs.google.com/presentation/d/1xLd-rhbmyzp3sq9fVtgHluqIzq15m_YHsoo6ZbHoo2A/embed?start=false&loop=false&delayms=3000&rm=minimal" frameborder="0" width="700" height="350" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="clip-path: inset(3.5px 5.5px 8px 5px);"></iframe>
 
 <br>
 
