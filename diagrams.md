@@ -35,7 +35,7 @@ The interactive diagrams below are taken from lecture. Click on a diagram to "ac
 
 <center>
 
-<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTgVlFngQcLMYHP-z1vq5lVXjsBgcHebc-3TX7SW6L_gjX6TD1gsflvVDQUpWiDdeEPqJASenUIfBVd/embed?start=false&loop=false&delayms=3000&rm=minimal&slide=id.g2185933e14b_0_49" frameborder="0" width="800" height="400" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" 
+<iframe src="https://docs.google.com/presentation/d/1IBMwlqBtnD-Ml1Zhmqs6pnYV6jcYayr3VGFqN9Dg3xk/embed?start=false&loop=false&delayms=3000&rm=minimal&slide=id.g2185933e14b_0_49" frameborder="0" width="800" height="400" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" 
 style="clip-path: inset(1.5px 2.5px 2.5px 5px);"
 ></iframe>
 
