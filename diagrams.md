@@ -51,7 +51,7 @@ style="clip-path: inset(1.5px 2.5px 2.5px 5px);"
 
 <center>
 
-<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTnRGwEnKP2V-Z82DlxW1b1nMb2F0zWyrXIzFSpQx_8Wd3MFaf56y2_u3JrLwZ5SjWmfapL5BJLfsDG/embed?start=false&loop=false&delayms=3000&rm=minimal" frameborder="0" width="900" height="270" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
+<iframe src="https://docs.google.com/presentation/d/17-vkRiBApVy9oZUu87NCVtuZvyq6YpqxyGF5vvXxEA8/embed?start=false&loop=false&delayms=3000&rm=minimal" frameborder="0" width="900" height="270" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
 style="clip-path: inset(3.5px 5.5px 10px 5px);">
 </iframe>
 
