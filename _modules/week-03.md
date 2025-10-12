@@ -19,7 +19,7 @@ days:
         - name: DISC 3
           type: disc
           title: Querying, Grouping, and Plotting
-          url:
+          url: https://practice.dsc10.com/disc03/index.html
     - date: 2025-10-15
       events: 
         - name: LEC 9
