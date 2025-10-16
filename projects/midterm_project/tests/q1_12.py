@@ -1,0 +1,12 @@
+test = {   'name': 'q1_12',
+    'points': 1,
+    'suites': [   {   'cases': [   {   'code': ">>> callable(sort_albums_by) and isinstance(sort_albums_by('Acousticness'), np.ndarray) and isinstance(sort_albums_by('Acousticness')[0], str)\nTrue",
+                                       'hidden': False,
+                                       'locked': False},
+                                   {   'code': ">>> len(sort_albums_by('Acousticness')) == len(tswift.get('Album').unique())# Check the length of your output array.\nTrue",
+                                       'hidden': False,
+                                       'locked': False}],
+                      'scored': True,
+                      'setup': '',
+                      'teardown': '',
+                      'type': 'doctest'}]}
