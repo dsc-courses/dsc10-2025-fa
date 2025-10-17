@@ -60,5 +60,5 @@ days:
         - name: SUR
           type: survey
           title: Mid-Quarter Survey
-          url:
+          url: http://datahub.ucsd.edu/user-redirect/git-sync?repo=https://github.com/dsc-courses/dsc10-2025-fa&branch=main&subPath=homeworks/hw3/hw3.ipynb
 ---
