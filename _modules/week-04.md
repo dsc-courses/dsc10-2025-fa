@@ -56,7 +56,7 @@ days:
         - name: HW 3
           type: hw
           title: DataFrames, Control Flow, and Probability
-          url: http://datahub.ucsd.edu/user-redirect/git-sync?repo=https://github.com/dsc-courses/dsc10-2025-fa&branch=main&subPath=homeworks/hw3/hw3.ipynb
+          url: http://datahub.ucsd.edu/user-redirect/git-sync?repo=https://github.com/dsc-courses/dsc10-2025-fa&branch=main&subPath=homeworks/hw3/hw3.ipynb 
         - name: SUR
           type: survey
           title: Mid-Quarter Survey
