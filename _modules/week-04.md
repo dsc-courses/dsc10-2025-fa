@@ -17,7 +17,7 @@ days:
         - name: DISC 4
           type: disc
           title: Functions, DataFrames, and Control Flow
-          url:
+          url: https://practice.dsc10.com/disc04/index.html
     - date: 2025-10-22
       events: 
         - name: LEC 12
