@@ -27,7 +27,7 @@ days:
         type: lecture
         title: Simulation
         url: http://datahub.ucsd.edu/user-redirect/git-sync?repo=https://github.com/dsc-courses/dsc10-2025-fa&subPath=resources/lectures/lec12/lec12.ipynb
-        html: resources/lectures/lec12/lec12.pdf
+        html: resources/lectures/lec12/lec12.html
         podcast:
         readings:
           - name: CIT 9.3-9.4
