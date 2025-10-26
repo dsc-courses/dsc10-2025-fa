@@ -49,7 +49,7 @@ This site is **under construction**. Anything you read here is not finalized. Th
 
 
 
-[Jump to the current week](/#week-5-midterm-exam){: .btn }
+[Jump to the current week](/#week-3-functions-and-control-flow){: .btn }
 
 
 {% for module in site.modules %}
