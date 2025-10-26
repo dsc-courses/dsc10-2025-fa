@@ -63,5 +63,5 @@ days:
       - name: SUR
         type: survey
         title: Mid-Quarter Survey
-        url:
+        url: https://docs.google.com/forms/d/e/1FAIpQLSe1GW42dTvBEGNmazkLwpfLDudML4Jw967Cffnou1hpj-GoKw/viewform?usp=header
 ---

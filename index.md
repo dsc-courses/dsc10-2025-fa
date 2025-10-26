@@ -35,21 +35,23 @@ This site is **under construction**. Anything you read here is not finalized. Th
 >Earn 1 participation point by filling out both [SETs](https://academicaffairs.ucsd.edu/Modules/Evals/) and the internal [End-of-Quarter Survey](https://forms.gle/hWqgRBp4B45LDMLW9) before Saturday, June 7th at 8AM.
 -->
 
-<!--{: .success }
->The Midterm Exam is **this Monday, February 10th**. [See announcements here.](https://edstem.org/us/courses/70673/discussion/6127710)
->
+{: .success }
+>The Midterm Exam is **this Wednesday, October 29th**. [See announcements here.](https://campuswire.com/c/GF283E889/feed/313)
+
+<!--
 >The deadline of the Midterm Project has been extended to **Thursday, February 13th**!
 -->
 
-{: .success }
+<!--{: .success }
 >**Tip**: When working on assignments, use Ctrl+F on this page to search for a keyword and quickly find the relevant lecture. Click the "✏️ write" button to open a static version of the lecture for reference, which is much faster than loading it on DataHub. 
 >
 >Also, make sure to use the [reference sheet](https://dsc-courses.github.io/bpd-reference/docs/documentation/intro/) to quickly look up `babypandas` methods and see examples of how they work.
+-->
 
 
 
 
-[Jump to the current week](/#week-3-functions-and-control-flow){: .btn }
+[Jump to the current week](/#week-5-midterm-exam){: .btn }
 
 
 {% for module in site.modules %}
