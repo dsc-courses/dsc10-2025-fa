@@ -7,6 +7,7 @@ days:
       - name: REV
         type: lecture
         title: Midterm Review
+        html: resources/lectures/Midterm___DSC10__Spring_25.pdf
       - name: DISC 5
         type: disc
         title: Probability and Simulation
