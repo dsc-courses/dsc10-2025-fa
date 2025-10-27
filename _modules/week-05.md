@@ -7,10 +7,11 @@ days:
       - name: REV
         type: lecture
         title: Midterm Review
+	html: https://practice.dsc10.com/sp25-midterm/index.html
       - name: DISC 5
         type: disc
         title: Probability and Simulation
-        url: https://practice.dsc10.com/disc04/index.html
+        url: https://practice.dsc10.com/disc05/index.html
   - date: 2025-10-29
     events:
       - name: EXAM
