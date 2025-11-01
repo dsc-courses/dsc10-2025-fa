@@ -58,4 +58,4 @@ days:
           type: hw
           title: Simulation, Sampling, Bootstrapping
           url: https://datahub.ucsd.edu/user-redirect/git-sync?repo=https://github.com/dsc-courses/dsc10-2025-fa&branch=main&subPath=homeworks/hw4/hw4.ipynb
----
+--- 
