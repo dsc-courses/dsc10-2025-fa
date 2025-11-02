@@ -25,7 +25,7 @@ days:
         title: Standardization and the Normal Distribution
         url:
         html:
-        podcast:
+        podcast: https://podcast.ucsd.edu/watch/sp25/dsc10_b00/18
         readings:
           - name: CIT 14.2-14.3
             url: https://inferentialthinking.com/chapters/14/2/Variability.html
