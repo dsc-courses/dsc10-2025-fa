@@ -13,13 +13,6 @@ nav_order: 1
 
 {{ site.staffersnobio }}
 
-<!-- {: .success }
->**Some important scheduling notes:**
->
->On Friday, Janine is out of town so there is **no live lecture**. Instead, [watch this recording 🎥](https://podcast.ucsd.edu/watch/wi25/dsc10_b00/25) from last quarter.
->
->Quiz 5 is on **Monday**, June 2nd. -->
-
 <!--{: .success }
 >Welcome to DSC 10! Make sure to read this website thoroughly and complete the items in the [Getting Started](https://dsc10.com/syllabus/#-getting-started) checklist. These are due very soon, on **Saturday, September 27th at 11:59PM**.-->
 
@@ -30,14 +23,6 @@ This site is **under construction**. Anything you read here is not finalized. Th
 >The Final Exam is **this Saturday, June 7th from 11:30AM to 2:30PM in CENTER 101**.
 >
 >Earn 1 participation point by filling out both [SETs](https://academicaffairs.ucsd.edu/Modules/Evals/) and the internal [End-of-Quarter Survey](https://forms.gle/hWqgRBp4B45LDMLW9) before Saturday, June 7th at 8AM.
--->
-
-{: .success }
-
-> Janine will be absent on Wednesday so students in her sections should watch [this recording of Lecture 16.](https://podcast.ucsd.edu/watch/sp25/dsc10_b00/18)
-
-<!--
->The deadline of the Midterm Project has been extended to **Thursday, February 13th**!
 -->
 
 <!--{: .success }
