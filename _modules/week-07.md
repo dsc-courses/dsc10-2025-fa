@@ -1,5 +1,5 @@
 ---
-title: Week 7 – Central Limit Theorem
+title: Week 7 – Hypothesis Testing
 weekNumber: 7
 days:
     - date: 2025-11-10
@@ -19,6 +19,7 @@ days:
         - name: DISC 7
           type: disc
           title: Standardization and the Normal Distribution
+	  url: https://practice.dsc10.com/disc07/index.html
     - date: 2025-11-12
       events: 
         - name: LEC 19
