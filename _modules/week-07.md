@@ -55,7 +55,7 @@ days:
           - name: 11.4
             url: https://inferentialthinking.com/chapters/11/4/Error_Probabilities.html
         keywords: fair or unfair coin, p-value, midterm exam scores, Alameda County jury, TVD
-  - date: 2025-11-15 
+  - date: 2025-11-15
     events:
       - name: HW 5
         type: hw
