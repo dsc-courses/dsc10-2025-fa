@@ -20,7 +20,7 @@ days:
         type: disc
         title: Standardization and the Normal Distribution
         url: https://practice.dsc10.com/disc07/index.html
-  - date: 2025-11-12 
+  - date: 2025-11-12
     events:
       - name: LEC 19
         type: lecture
