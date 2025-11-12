@@ -25,8 +25,8 @@ days:
       - name: LEC 19
         type: lecture
         title: Hypothesis Testing
-        url:
-        html:
+        url: http://datahub.ucsd.edu/user-redirect/git-sync?repo=https://github.com/dsc-courses/dsc10-2025-fa&subPath=resources/lectures/lec19/lec19.ipynb
+        html: resources/lectures/lec19/lec19.html
         podcast:
         readings:
           - name: CIT 11.3
