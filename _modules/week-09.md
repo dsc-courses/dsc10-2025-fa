@@ -7,7 +7,7 @@ days:
       - name: LEC 24
         type: lecture
         title: Regression and Least Squares
-        url: http://datahub.ucsd.edu/user-redirect/git-sync?repo=https://github.com/dsc-courses/dsc10-2025-fa&subPath=resources/lectures/lec18/lec18.ipynb
+        url:
         html:
         podcast:
         readings:
