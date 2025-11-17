@@ -17,7 +17,7 @@ days:
         - name: DISC 8
           type: disc
           title: The CLT and Hypothesis Testing
-          url:
+          url: https://practice.dsc10.com/disc08/index.html
     - date: 2025-11-19
       events: 
         - name: LEC 22
