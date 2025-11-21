@@ -44,8 +44,8 @@ days:
       - name: LEC 23
         type: lecture
         title: Correlation
-        url:
-        html:
+        url: http://datahub.ucsd.edu/user-redirect/git-sync?repo=https://github.com/dsc-courses/dsc10-2025-fa&subPath=resources/lectures/lec23/lec23.ipynb
+        html: resources/lectures/lec23/lec23.html
         podcast:
         readings:
           - name: CIT 15.0-15.2
