@@ -11,12 +11,12 @@ days:
         type: disc
         title: Regression
         url:
-  - date: 2025-12-2
-    events:
-      - name: LAB 7
-        type: lab
-        title: Regression
-        url:
+  # - date: 2025-12-2
+  #   events:
+  #     - name: LAB 7
+  #       type: lab
+  #       title: Regression
+  #       url: http://datahub.ucsd.edu/user-redirect/git-sync?repo=https://github.com/dsc-courses/dsc10-2025-fa&subPath=labs/lab7/lab7.ipynb
   - date: 2025-12-3
     events:
       - name: REV
@@ -31,6 +31,10 @@ days:
         type: proj
         title: Final Project
         url: https://datahub.ucsd.edu/user-redirect/git-sync?repo=https://github.com/dsc-courses/dsc10-2025-fa&subPath=projects/final_project/FinalProject.ipynb
+      - name: LAB 7
+        type: lab
+        title: Regression
+        url: http://datahub.ucsd.edu/user-redirect/git-sync?repo=https://github.com/dsc-courses/dsc10-2025-fa&subPath=labs/lab7/lab7.ipynb
   - date: 2025-12-5
     events:
       - name: REV
