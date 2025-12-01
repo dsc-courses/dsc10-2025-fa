@@ -8,9 +8,9 @@ days:
         type: lecture
         title: Review
         html: resources/lectures/Final___DSC10__Spring_25.pdf
-        A:
-        B:
-        C:
+        A: resources/lectures/9am.pdf
+        B: resources/lectures/10am.pdf
+        C: resources/lectures/11am.pdf
       - name: DISC 10
         type: disc
         title: Regression
