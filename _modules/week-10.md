@@ -10,7 +10,7 @@ days:
       - name: DISC 10
         type: disc
         title: Regression
-        url:
+        url: https://practice.dsc10.com/disc10/index.html
   # - date: 2025-12-2
   #   events:
   #     - name: LAB 7

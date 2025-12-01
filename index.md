@@ -34,7 +34,7 @@ This site is **under construction**. Anything you read here is not finalized. Th
 >Also, make sure to use the [reference sheet](https://dsc-courses.github.io/bpd-reference/docs/documentation/intro/) to quickly look up `babypandas` methods and see examples of how they work.
 -->
 
-[Jump to the current week](/#week-9-prediction){: .btn }
+[Jump to the current week](/#week-10-review){: .btn }
 
 {% for module in site.modules %}
 {{ module }}
