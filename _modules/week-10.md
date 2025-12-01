@@ -7,6 +7,10 @@ days:
       - name: REV
         type: lecture
         title: Review
+        html: resources/lectures/Final___DSC10__Spring_25.pdf
+        A:
+        B:
+        C:
       - name: DISC 10
         type: disc
         title: Regression
