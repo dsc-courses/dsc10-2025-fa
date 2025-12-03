@@ -52,5 +52,5 @@ days:
       - name: SUR
         type: survey
         title: SETs and End-of-Quarter Survey (due 8AM)
-        url:
+        url: https://docs.google.com/forms/d/e/1FAIpQLSeTWErlsoGC1kfabXZrgHI_SkOe7tUDoFyUclMmfPpKu2187w/viewform?usp=dialog
 ---
