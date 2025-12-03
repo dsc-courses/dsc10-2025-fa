@@ -26,6 +26,7 @@ days:
       - name: REV
         type: lecture
         title: Review
+        html: resources/lectures/final_review/Final___DSC10__Spring_24.pdf
       - name: QUIZ 5
         type: quiz
         title: Quiz 5 covers Lectures 19-22
