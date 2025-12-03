@@ -27,6 +27,9 @@ days:
         type: lecture
         title: Review
         html: resources/lectures/final_review/Final___DSC10__Spring_24.pdf
+        A: resources/lectures/final_review/9am_sp24.pdf
+        B: resources/lectures/final_review/10am_sp24.pdf
+        C: resources/lectures/final_review/11am_sp24.pdf
       - name: QUIZ 5
         type: quiz
         title: Quiz 5 covers Lectures 19-22
