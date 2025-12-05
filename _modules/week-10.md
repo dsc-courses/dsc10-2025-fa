@@ -50,6 +50,9 @@ days:
         title: Review, Conclusion
         url: http://datahub.ucsd.edu/user-redirect/git-sync?repo=https://github.com/dsc-courses/dsc10-2025-fa&subPath=resources/lectures/lec27/lec27.ipynb
         html: resources/lectures/lec27/lec27.html
+        A: resources/lectures/final_review/9am_finalreview.pdf
+        B: resources/lectures/final_review/10am_finalreview.pdf
+        C: resources/lectures/final_review/11am_finalreview.pdf
   - date: 2025-12-6
     events:
       - name: EXAM
