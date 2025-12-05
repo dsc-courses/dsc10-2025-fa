@@ -48,6 +48,8 @@ days:
       - name: REV
         type: lecture
         title: Review, Conclusion
+        url: http://datahub.ucsd.edu/user-redirect/git-sync?repo=https://github.com/dsc-courses/dsc10-2025-fa&subPath=resources/lectures/lec27/lec27.ipynb
+        html: resources/lectures/lec27/lec27.html
   - date: 2025-12-6
     events:
       - name: EXAM
